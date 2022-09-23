@@ -3,7 +3,7 @@ MicroPython Game for Thumby
 
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%205.png">
 
-A Game Created in MicroPython for Thumby that simulates a virtual pet. The virtual pet is a star that lives in a galaxy far, far away! Raise the pet starting from a baby blackhole! The star evolves into a nebula cloud, then finally a star!
+A Game Created in MicroPython for Thumby that simulates a virtual pet. The virtual pet is a star that lives in a galaxy far, far away! Raise the pet starting from a baby blackhole. The star evolves into a nebula cloud, then finally a star.
 
 Play games , give toys, feed, and take proper care of hygiene. 
 
@@ -13,9 +13,7 @@ Play games , give toys, feed, and take proper care of hygiene.
 
 
 
-
-
-The best way to play is to give it a proper balance of all 4. Everytime you feed it , it levels up to a max of 10.
+Everytime you feed it , it levels up to a max of 10.
 
 
 Blackhole Level 0-3
