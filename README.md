@@ -18,8 +18,6 @@ Play games , give toys, feed, and take proper care of hygiene.
 The best way to play is to give it a proper balance of all 4. Everytime you feed it , it levels up to a max of 10.
 
 
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%202%207.png">
-
 Blackhole Level 0-3
 Nebula level 4-7
 Star Level 8-9
@@ -38,6 +36,10 @@ States: Sad, Average, Happy, Super happy
 
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%205.png">
 
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%202%207.png">
+
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%202%206.png">
+
 Rules: 
 Win a game -> +1 Happy, +1 Education
 Lose a game -> +1 Sad 
@@ -52,7 +54,6 @@ Hygene heals sick
 Toys heal anger
 food heals sad
 
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%202%206.png">
 
 
 Sick && Sad && Angry states == 0 -> Star Happy State
