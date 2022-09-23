@@ -41,26 +41,41 @@ States: Sad, Average, Happy, Super happy
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%202%206.png">
 
 Rules: 
+
 Win a game -> +1 Happy, +1 Education
+
 Lose a game -> +1 Sad 
+
 Food -> + 1 Level, -1 Happy, -1 Sad
+
 Hygene -> +1 Happy, -1 sick
+
 Toy -> +1 Happy -1 Angry
+
 2 toys in a row -> -1 happy, +1 sad
+
 2 hygenes in a row -> -1 happy, +1 Angry
+
 2 food in a row -> +1 Sick
 
 Hygene heals sick
+
 Toys heal anger
+
 food heals sad
 
 
 
 Sick && Sad && Angry states == 0 -> Star Happy State
+
 Sick<-Angry<-Sad<-State
+
 if sick > 0 {show sick}
+
 else if angry >0 {show angry}
+
 else if sad > 0 {show sad}
+
 else [show state}
 
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%206.png">
