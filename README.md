@@ -62,9 +62,9 @@ Hygene -> +1 Happy, -1 sick
 
 Toy -> +1 Happy -1 Angry
 
-2 toys in a row -> -1 happy, +1 sad
+2 toys in a row ->  +1 sad
 
-2 hygenes in a row -> -1 happy, +1 Angry
+2 hygenes in a row -> +1 Angry
 
 2 food in a row -> +1 Sick
 
@@ -72,7 +72,7 @@ Hygene heals sick
 
 Toys heal anger
 
-food heals sad
+Food heals sad
 
 
 
