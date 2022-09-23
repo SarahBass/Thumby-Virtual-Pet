@@ -1,5 +1,6 @@
 # Thumby-Virtual-Pet
 MicroPython Game for Thumby
+under construction
 
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%205.png">
 
@@ -12,9 +13,8 @@ Play games , give toys, feed, and take proper care of hygiene.
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%203%203.png">
 
 
-
+Notes:
 Everytime you feed it , it levels up to a max of 10.
-
 
 Blackhole Level 0-3
 
