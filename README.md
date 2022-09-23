@@ -19,19 +19,29 @@ The best way to play is to give it a proper balance of all 4. Everytime you feed
 
 
 Blackhole Level 0-3
+
 Nebula level 4-7
+
 Star Level 8-9
+
 Final Form Level 10
 
 Final Forms:
+
 Smart Star: Education == 7 or 8 
+
 Super Smart Star: Education > 9 
+
 Super Happy Star: Happy > 8
+
 Happy Star: Happy == 7 or 8 
+
 Average star: Happy == 5 or 6
+
 Sad Star: happy < 5
 
 Variables: Level(Food), Education, Happy, Sick, Sad, Angry
+
 States: Sad, Average, Happy, Super happy
 
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%205.png">
