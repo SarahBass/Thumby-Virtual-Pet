@@ -7,27 +7,26 @@ import random
 #  \_/ |_|_|   \__|\__,_|\__,_|_| \/    \___|\__|
 #
 #
-#Global Variables---------------------
-pageNumber=1                         #
-pagetype = "sadgas"                  #
+#Global Variables-------------------------#
+pageNumber=1                              #
 userInput=11
-                         #
-randnum=random.randint(2, 1299)      #
-randnumber=random.randint(5, 120)    #
-smallrandom=random.randint(0,10)     #
-palindromenum=[5,6,7,9,11,12,14,15,  #
-               17,18,19,21,28,35,36, #
-               37,42,63,73,74,84,85, #
-               94,101,111,119,126,131,
-               185,202,303,404,409]  #
-                                     #
-gameLibrary = ["Roman Numeral",      #
-               "Palindrome Pal",     #
-               "Binary Beats",       #
-               "Witch's Hex",        #
-               "Power Ball",]        #
-selector = 0                         #  
-#-------------------------------------
+                              #
+randnum=random.randint(2, 1299)           #
+randnumber=random.randint(5, 120)         #
+smallrandom=random.randint(0,10)          #
+palindromenum=[5,6,7,9,11,12,14,15,       #
+               17,18,19,21,28,35,36,      #
+               37,42,63,73,74,84,85,      #
+               94,101,111,119,126,131,    #
+               185,202,303,404,409]       #
+                                          #
+gameLibrary = ["Roman Numeral",           #
+               "Palindrome Pal",          #
+               "Binary Beats",            #
+               "Witch's Hex",             #
+               "Power Ball",]             #
+selector = 0                              #  
+#-----------------------------------------#
 
 
 ###########################################################################################
@@ -177,18 +176,22 @@ def BackgroundSwitch(level,sad, sick, angry,happy)-> str:
                     return "hyg"
         case _:
             return "startscreen"
-#-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=--=x=        
-# ☆‌ ╭◜◝‌ ‌͡‌ ‌◜◝╮‌ ‌    ..... ‌҉‌ ‌        / `  ‌♡‌    ╭◜◝‌ ‌͡‌ ‌◜◝◜◝‌ ‌͡‌ ‌◜◝‌ ‌◜◝ ╮‌  
-# ☆‌ (‌ ‌•‿•‌。‌ ‌) ☆ (‌•‿•‌。‌ )☆‌ ‌   ♡‌ ‌<。‌•‿•‌。>  <  Le'ts Get Started!)  
-#☆‌  ╰◟◞‌ ‌͜‌ ‌◟◞      ~~~~~ ☆‌    ‌҉‌ ‌  /, ,'\      ╰ ◟◞‌ ‌͜‌ ‌◟◞◟◞‌ ‌͜‌ ‌◟◞◟◞‌    
+
+pagetype =(BackgroundSwitch(starpet.level,
+                            starpet.sad,
+                            starpet.sick,
+                            starpet.angry,
+                            starpet.happy))           
+        
+
 #-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=--=x=
-#                        START OF GAME                             
+#                        START OF GAME                            #  
 #-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=--=x=
 
 
 #-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=--=x=
-# ☆‌ ╭◜◝‌ ‌͡‌ ‌◜◝╮‌ ‌    ..... ‌҉‌ ‌        / `  ‌*    ╭◜◝‌ ‌͡‌ ‌◜◝◜◝‌ ‌͡‌ ‌◜◝‌ ‌◜◝ ╮‌ 
-# ☆‌ (‌ 。‌•‿•‌‌ ‌) ☆ (‌。•‿•‌‌ )☆‌ ‌   * ‌<。‌•^•‌。>  < |    game over!    ) 
+# ☆‌ ╭◜◝‌ ‌͡‌ ‌◜◝╮‌ ‌    ..... ‌҉‌ ‌        / `  ‌♡‌    ╭◜◝‌ ‌͡‌ ‌◜◝◜◝‌ ‌͡‌ ‌◜◝‌ ‌◜◝ ╮‌ 
+# ☆‌ (‌ 。‌•‿•‌‌ ‌) ☆ (‌。•‿•‌‌ )☆‌ ‌   ♡‌ ‌<。‌•‿•‌。>  < |    game over!    ) 
 #☆‌  ╰◟◞‌ ‌͜‌ ‌◟◞      ~~~~~ ☆‌    ‌҉‌ ‌  /, ,'\      ╰◟◞‌ ‌͜‌ ‌◟◞◟◞‌ ‌͜‌ ‌◟◞◟◞‌    
 #-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=--=x=
 #                         END OF GAME                            
@@ -206,4 +209,4 @@ print(game4.answer)
 print(game5.text)
 print(game5.answer)
 print(starpet.happy)
-print(BackgroundSwitch(starpet.level,starpet.sad, starpet.sick, starpet.angry,starpet.happy))
+print(pagetype)
