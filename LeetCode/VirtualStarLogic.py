@@ -77,7 +77,8 @@ class Game:
         self.text = text
         self.userAnswer= userAnswer
 game1 = Game("Roman Numeral", randnum, intToRoman(randnum),userInput)    
-game2 = Game("Palindrome Pal", isPalindrome(isPalindrome,101), random.choice(palindromenum),isPalindrome(isPalindrome,(userInput*(random.choice(palindromenum))))) 
+game2 = Game("Palindrome Pal", isPalindrome(isPalindrome,101), random.choice(palindromenum),
+             isPalindrome(isPalindrome,(userInput*(random.choice(palindromenum))))) 
 game3 = Game("Binary Beats", randnumber,bin(randnumber)[2:], userInput)
 game4 = Game("Witch's Hex",randnumber,hex(randnumber)[2:],userInput)
 game5 = Game("Power Ball",pow(2,smallrandom),smallrandom,userInput)
