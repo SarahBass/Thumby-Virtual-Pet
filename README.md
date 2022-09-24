@@ -1,95 +1,43 @@
 # Thumby-Virtual-Pet
 MicroPython Game for Thumby
-under construction
-
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/t/blob/main/Animated%20gifs/Untitled%205.png">
-
-A Game Created in MicroPython for Thumby that simulates a virtual pet. The virtual pet is a star that lives in a galaxy far, far away! Raise the pet starting from a baby blackhole. The star evolves into a nebula cloud, then finally a star.
 
 Play games , give toys, feed, and take proper care of hygiene. 
 
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%205.png">
+
+A Game Created in MicroPython for a Thumby device that simulates a virtual pet. The virtual pet is a star that lives in a galaxy far, far away! Raise the pet starting from a baby blackhole. The star evolves into a nebula cloud, then finally a star.
+
+Game appears on a tiny 72*40 pixel screen and all art is loaded from simple binary files to show a black and white bitmap.
+
+
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%202%202%202%205.png">
 
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%202%203%203.png">
-
-
-Notes:
-Everytime you feed it , it levels up to a max of 10.
-
-Blackhole Level 0-3
-
-Nebula level 4-7
-
-Star Level 8-9
-
-Final Form Level 10
-
-Final Forms:
-
-Smart Star: Education == 7 or 8 
-
-Super Smart Star: Education > 9 
-
-Super Happy Star: Happy > 8
-
-Happy Star: Happy == 7 or 8 
-
-Average star: Happy == 5 or 6
-
-Sad Star: happy < 5
-
-Variables: Level(Food), Education, Happy, Sick, Sad, Angry
-
-States: Sad, Average, Happy, Super happy
-
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%202%205.png">
+## Star pet has multiple states of emotion
 
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%202%202%207.png">
 
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%202%202%206.png">
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%202%203%203.png">
 
-Rules: 
+## Earn Toys, Mini Pets, and Food 
 
-Win a game -> +1 Happy, +1 Education
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Food31%202.png">
 
-Lose a game -> +1 Sad 
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Toy2%202.png">
 
-Food -> + 1 Level, -1 Happy, -1 Sad
+## Mini games are all inspired by LEETCODE Challenges
 
-Hygene -> +1 Happy, -1 sick
-
-Toy -> +1 Happy -1 Angry
-
-2 toys in a row ->  +1 sad
-
-2 hygenes in a row -> +1 Angry
-
-2 food in a row -> +1 Sick
-
-Hygene heals sick
-
-Toys heal anger
-
-Food heals sad
-
-
-
-Sick && Sad && Angry states == 0 -> Star Happy State
-
-Sick<-Angry<-Sad<-State
-
-if sick > 0 {show sick}
-
-else if angry >0 {show angry}
-
-else if sad > 0 {show sad}
-
-else [show state}
+Game 1: Leetcode Roman Numeral Game -> Integer Challenge #0013
 
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%206.png">
 
-The games are all inspired by LEETCODE Challenges!!
+Game 1: Leetcode Roman Numeral Game -> Integer Challenge #0013
 
-Game 1: Leetcode Roman -> Integer Challenge #0013
+Game 2: Leetcode Palindrome Pal Game -> Palindrome Challenge #0009
+
+Game 3: Binary Beats : Binary Number Game
+
+Game 4: Witch's Hex : Hexidecimal Number Game
+
+Game 5: Power Ball : Powers of 2 Number game
 
 
