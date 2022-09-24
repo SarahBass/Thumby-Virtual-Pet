@@ -1,5 +1,5 @@
 import random
-
+pagetype = "sadgas"
 userInput=11
 randnum=random.randint(2, 1299)
 randnumber=random.randint(5, 120)
@@ -28,17 +28,18 @@ def isPalindrome(self, x):
         return False
 
 class Star:
-    def __init__(self, food, toy, hyg, sad, happy, angry, edu, level ):
+    def __init__(self, food, toy, hyg, sad, sick, happy, angry, edu, level ):
         self.food = food
         self.toy = toy
         self.hyg = hyg
-        self.sad = sad  
+        self.sad = sad
+        self.sick = sick
         self.happy = happy  
         self.angry = angry  
         self.edu = edu
         self.level= level 
         
-starpet = Star(0,0,0,0,0,0,0,0)
+starpet = Star(0,0,0,0,0,5,0,0,0)
 
 class Game:
     def __init__(self,name, answer, text, userAnswer):
@@ -63,4 +64,58 @@ print(game4.text)
 print(game4.answer)
 print(game5.text)
 print(game5.answer)
+print(starpet.happy)
 
+def mainpage(level,sad, sick, angry,happy):
+    if level == 10:
+        "GameOver"
+    elif level == range(7,9):
+        if sick > 0:
+            "starsick"
+        elif angry >0:
+            "starangry"
+        elif sad > 0:
+            "starsad"
+        else :
+            if happy > 8:
+                "superhappystar"
+            elif happy == range(7,8):
+                "happystar"
+            elif happy == range(5,6):
+                "averagestar"
+            else:
+                "sadstar"
+    elif level ==range(3,6):
+        if sick > 0:
+            "nebulasick"
+        elif angry >0:
+            "nebulaangry"
+        elif sad > 0:
+            "nebulasad"
+        else :
+            if happy > 8:
+                "superhappynebula"
+            elif happy == range(7,8):
+                "happynebula"
+            elif happy == range(5,6):
+                "averagenebula"
+            else:
+                "sadnebula"
+    else :
+        if sick > 0:
+            "gassick"
+        elif angry >0:
+            "gasangry"
+        elif sad > 0:
+            "gassad"
+        else :
+            if happy > 8:
+                "superhappygas"
+            elif happy == range(7,8):
+                "happygas"
+            elif happy == range(5,6):
+                "averagegas"
+            else:
+                "sadgas"
+    
+        
