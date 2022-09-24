@@ -3,6 +3,7 @@ import random
 userInput=11
 randnum=random.randint(2, 1299)
 randnumber=random.randint(5, 120)
+smallrandom=random.randint(0,10)
 palindromenum=[5,6,7,9,11,12,14,15,17,18,19,21,28,35,36,37,42,63,73,74,84,85,94,101,111,119,126,131,185,202,303,404,409]
 def intToRoman(num: int) -> str:
     M = ["", "M", "MM", "MMM"]
@@ -45,10 +46,11 @@ class Game:
         self.answer = answer
         self.text = text
         self.userAnswer= userAnswer
-game1 = Game("RomanNumeral", randnum, intToRoman(randnum),userInput)    
-game2 = Game("Palindrome", isPalindrome(isPalindrome,101), random.choice(palindromenum),isPalindrome(isPalindrome,(userInput*(random.choice(palindromenum))))) 
-game3 = Game("Binary", randnumber,bin(randnumber)[2:], userInput)
+game1 = Game("Roman Numeral", randnum, intToRoman(randnum),userInput)    
+game2 = Game("Palindrome Pal", isPalindrome(isPalindrome,101), random.choice(palindromenum),isPalindrome(isPalindrome,(userInput*(random.choice(palindromenum))))) 
+game3 = Game("Binary Beats", randnumber,bin(randnumber)[2:], userInput)
 game4 = Game("Witch's Hex",randnumber,hex(randnumber)[2:],userInput)
+game5 = Game("Power Ball",pow(2,smallrandom),smallrandom,userInput)
 print(starpet.food)
 print(game1.answer)
 print(game1.text)
@@ -59,4 +61,6 @@ print(game3.text)
 print(game3.answer)
 print(game4.text)
 print(game4.answer)
+print(game5.text)
+print(game5.answer)
 
