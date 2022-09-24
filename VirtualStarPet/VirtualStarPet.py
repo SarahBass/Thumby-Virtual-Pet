@@ -19,23 +19,23 @@
 ################
 #####IMPORTS####
 ################
-import ssd1306 #
-import machine #
-import time    #
-import uos     #
-import random  #
-import gc      #
-import utime   #
-import thumby  #
-import os      #    
-################
+import ssd1306
+import machine
+import time
+import uos
+import random
+import gc
+import utime
+import thumby
+import os
+import math
+
+
 ##############################################
 ###########MACHINE SPECS######################
 ##############################################
-machine.freq(125000000)
-                      #
-gc.enable()                                  #
-from framebuf import FrameBuffer, MONO_VLSB  #           
+
+          
 ##############################################
 
 #Global Variables-------------------------#
@@ -57,11 +57,7 @@ gameLibrary = ["Roman Numeral",           #
                "Witch's Hex",             #
                "Power Ball",]             #
 selector = 0                              #
-thumby.DISPLAY_W = 72                     #
-thumby.DISPLAY_H = 40                     #
-gameRunning = True                        #
-startFPS = 3.0                            #
-startTime=time.ticks_ms()                 #
+             
 #-----------------------------------------#
 
 ###########################################################################################
@@ -124,101 +120,96 @@ starpet = Star(0,0,0,0,0,5,0,0,0)
 ################### MANAGE BACKGROUND CHANGES #############################################
 ###########################################################################################
 
-
 def BackgroundSwitch(level,sad, sick, angry,happy)-> str:
-    match pageNumber:
-        case 1:
-            if level == 10:
-                return "gameover"
-            elif level == range(7,9):
-                if sick > 0:
-                    return "starsick"
-                elif angry >0:
-                    return "starangry"
-                elif sad > 0:
-                    return "starsad"
-                else :
-                    if happy > 8:
-                        return "superhappystar"
-                    elif happy == range(7,8):
-                        return "happystar"
-                    elif happy == range(5,6):
-                        return "averagestar"
-                    else:
-                        return "sadstar"
-            elif level ==range(3,6):
-                if sick > 0:
-                    return "nebulasick"
-                elif angry >0:
-                    return "nebulaangry"
-                elif sad > 0:
-                    return "nebulasad"
-                else :
-                    if happy > 8:
-                        return "superhappynebula"
-                    elif happy == range(7,8):
-                        return "happynebula"
-                    elif happy == range(5,6):
-                        return "averagenebula"
-                    else:
-                        return "sadnebula"
+    if pageNumber == 1:
+        if level == 10:
+            return "gameover"
+        elif level == range(7,9):
+            if sick > 0:
+                return "starsick"
+            elif angry >0:
+                return "starangry"
+            elif sad > 0:
+                return "starsad"
             else :
-                if sick > 0:
-                    return "gassick"
-                elif angry >0:
-                    return "gasangry"
-                elif sad > 0:
-                    return "gassad"
-                else :
-                    if happy > 8:
-                        return "superhappygas"
-                    elif happy == range(7,8):
-                        return "happygas"
-                    elif happy == range(5,6):
-                        return "averagegas"
-                    else:
-                        return "sadgas"
-        case 2:
-            return random.choice(gameLibrary)
-        case 3:
-            match selector:
-                case 1:
-                    return "funfood"
-                case 2:
-                    return "meteor"
-                case 3:
-                    return "shootingstar"
-                case _:
-                    return "Food"
-        case 4:
-            match selector:
-                case 1:
-                    return "animal"
-                case 2:
-                    return "spaceship"
-                case 3:
-                    return "satelite"
-                case _:
-                    return "toy"
-        case 5:
-            match selector:
-                case 1:
-                    return "bath"
-                case 2:
-                    return "brush"
-                case 3:
-                    return "medicine"
-                case _:
-                    return "hyg"
-        case _:
-            return "startscreen"
+                if happy > 8:
+                    return "superhappystar"
+                elif happy == range(7,8):
+                    return "happystar"
+                elif happy == range(5,6):
+                    return "averagestar"
+                else:
+                    return "sadstar"
+        elif level ==range(3,6):
+            if sick > 0:
+                return "nebulasick"
+            elif angry >0:
+                return "nebulaangry"
+            elif sad > 0:
+                return "nebulasad"
+            else :
+                if happy > 8:
+                    return "superhappynebula"
+                elif happy == range(7,8):
+                    return "happynebula"
+                elif happy == range(5,6):
+                    return "averagenebula"
+                else:
+                    return "sadnebula"
+        else :
+            if sick > 0:
+                return "gassick"
+            elif angry >0:
+                return "gasangry"
+            elif sad > 0:
+                return "gassad"
+            else :
+                if happy > 8:
+                    return "superhappygas"
+                elif happy == range(7,8):
+                    return "happygas"
+                elif happy == range(5,6):
+                    return "averagegas"
+                else:
+                    return "sadgas"
+    elif pageNumber == 2:
+        return random.choice(gameLibrary)
+    elif pageNumber == 3:
+        if selector == 1:
+            return "funfood"
+        elif selector == 2:
+            return "meteor"
+        elif selector == 3:
+            return "shootingstar"
+        else:
+            return "Food"
+    elif pageNumber == 4:
+        if selector == 1:
+            return "animal"
+        elif selector == 2:
+            return "spaceship"
+        elif selector == 3:
+            return "satelite"
+        else:
+            return "toy"
+    elif pageNumber == 5:
+        if selector == 1:
+            return "bath"
+        elif selector == 2:
+            return "brush"
+        elif selector == 3:
+            return "medicine"
+        else:
+            return "hyg"
+    else:
+        return "startscreen"
 
 pagetype =(BackgroundSwitch(starpet.level,
                             starpet.sad,
                             starpet.sick,
                             starpet.angry,
-                            starpet.happy))           
-        
+                            starpet.happy))         
+
 
 #-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=--=x=
 #                        START OF GAME                           # 
