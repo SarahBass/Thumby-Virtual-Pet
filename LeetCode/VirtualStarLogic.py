@@ -20,10 +20,13 @@
 #                           https://github.com/SarahBass
 
 
-import random
+
+
+###########################################
+import random                             #
 pageNumber=1                              #
-userInput=11
-                              #
+userInput=11                              #
+                                          #
 randnum=random.randint(2, 1299)           #
 randnumber=random.randint(5, 120)         #
 smallrandom=random.randint(0,10)          #
