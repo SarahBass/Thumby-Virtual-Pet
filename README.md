@@ -2,15 +2,15 @@
 MicroPython Game for Thumby
 under construction
 
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%205.png">
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/t/blob/main/Animated%20gifs/Untitled%205.png">
 
 A Game Created in MicroPython for Thumby that simulates a virtual pet. The virtual pet is a star that lives in a galaxy far, far away! Raise the pet starting from a baby blackhole. The star evolves into a nebula cloud, then finally a star.
 
 Play games , give toys, feed, and take proper care of hygiene. 
 
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%202%202%205.png">
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%202%202%202%205.png">
 
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%203%203.png">
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%202%203%203.png">
 
 
 Notes:
@@ -42,11 +42,11 @@ Variables: Level(Food), Education, Happy, Sick, Sad, Angry
 
 States: Sad, Average, Happy, Super happy
 
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%205.png">
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%202%205.png">
 
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%202%207.png">
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%202%202%207.png">
 
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%202%202%206.png">
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%202%202%206.png">
 
 Rules: 
 
@@ -86,7 +86,7 @@ else if sad > 0 {show sad}
 
 else [show state}
 
-<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Untitled%206.png">
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%206.png">
 
 The games are all inspired by LEETCODE Challenges!!
 
