@@ -270,10 +270,11 @@ while(True):
             thumby.display.update()
         else:
             thumby.display.fill(0) 
-            thumby.display.drawSprite(Spr1)
-            Spr1.setFrame(Spr1.currentFrame+1)
-    else:     
-        thumby.display.fill(1) 
+            thumby.display.drawSprite(Spr)
+            Spr.setFrame(Spr.currentFrame+1)
+            thumby.display.update()
+    else:
+        thumby.display.fill(0) 
         thumby.display.drawSprite(Spr)
         Spr.setFrame(Spr.currentFrame+1)
         thumby.display.update()
