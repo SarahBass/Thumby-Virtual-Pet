@@ -308,17 +308,21 @@ while(True):
         if thumby.buttonD.pressed():
             data=False    
         if thumby.buttonL.pressed():
-            rectangle = rectangle-20
+            rectangle = rectangle-18
             selector=selector-1
         if thumby.buttonR.pressed():
-            rectangle = rectangle+20
+            rectangle = rectangle+18
             selector=selector+1
         # (x, y, w, h, color)
         if pagetype  == "sadgas":
             thumby.display.fill(0) 
             thumby.display.drawSprite(Spr4)
             Spr4.setFrame(Spr4.currentFrame+1)
-            thumby.display.drawRectangle(rectangle, 2, 20, 7, 1) 
+            if rectangle > 40:
+                width = 14
+            else:
+                width = 20
+            thumby.display.drawRectangle(rectangle, 2, width, 7, 1) 
         thumby.display.update()
         if pagetype  == "dataon":
             thumby.display.fill(0) 
@@ -327,7 +331,7 @@ while(True):
             thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
             thumby.display.drawText("Level: ", 4,5, 1)
             thumby.display.drawText("Happy: " , 4,15, 1)
-            thumby.display.drawText("Education: " , 4,25, 1)
+            thumby.display.drawText("Smart: " , 4,25, 1)
             thumby.display.update()
     else:
         thumby.display.fill(0) 
