@@ -336,41 +336,8 @@ while(True):
             thumby.display.drawText("Happy:" + str(starpet.happy), 4,15, 1)
             thumby.display.drawText("Smart:" + str(starpet.edu), 4,25, 1)
             thumby.display.update()
-    elif pageNumber==3:
-            if pagetype  == "funfood":
-                thumby.display.fill(0) 
-                thumby.display.drawSprite(Spr6)
-                Spr6.setFrame(Spr6.currentFrame+1)
-                thumby.display.update()
-            elif pagetype  == "meteor":
-                thumby.display.fill(0) 
-                thumby.display.drawSprite(Spr6)
-                Spr6.setFrame(Spr6.currentFrame+1)
-                thumby.display.update()
-            elif pagetype == "shootingstar":
-                thumby.display.fill(0) 
-                thumby.display.drawSprite(Spr6)
-                Spr6.setFrame(Spr6.currentFrame+1)
-                thumby.display.update()
-            
-            else:    
     else:
         thumby.display.fill(0) 
         thumby.display.drawSprite(Spr)
         Spr.setFrame(Spr.currentFrame+1)
         thumby.display.update()
-     
-     
-
-#Rules: 
-#Win a game -> +1 Happy, +1 Education
-#Lose a game -> +1 Sad 
-#Food -> + 1 Level, -1 Happy, -1 Sad
-#Hygene -> +1 Happy, -1 sick
-#Toy -> +1 Happy -1 Angry
-#2 toys in a row ->  +1 sad
-#2 hygenes in a row -> +1 Angry
-#2 food in a row -> +1 Sick
-#Hygene heals sick
-#Toys heal anger
-#Food heals sad
