@@ -55,7 +55,7 @@ thumby.display.setFPS(4)
 ##############################################
 
 #Global Variables-------------------------#
-pageNumber=1                              #
+pageNumber=0                              #
 userInput=11                              #
                                           #
 randnum=random.randint(2, 1299)           #
@@ -230,12 +230,36 @@ pagetype =(BackgroundSwitch(starpet.level,
 #-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=--=x=
 #                        START OF GAME                           # 
 #-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=--=x=
- while(True):
+while(True):
+    if thumby.buttonA.pressed():
+        abutton=abutton+1
     if pagetype == "startscreen":
-        thumby.display.fill(1) 
-        thumby.display.drawSprite(Spr1)
-        Spr1.setFrame(Spr1.currentFrame+1)
-        thumby.display.update()
+        if abutton == 0:
+            thumby.display.fill(0) 
+            thumby.display.drawSprite(Spr1)
+            Spr1.setFrame(Spr1.currentFrame+1)
+            #thumby.display.drawText(string, x, y, color)
+            thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
+            thumby.display.drawText("In a Galaxy", 0,0, 1)
+            thumby.display.update()
+        elif abutton == 1:
+            thumby.display.fill(0) 
+            thumby.display.drawSprite(Spr1)
+            Spr1.setFrame(Spr1.currentFrame+1)
+            thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
+            thumby.display.drawText("far,far away", 0,0, 1)
+            thumby.display.update()
+        elif abutton == 1:
+            thumby.display.fill(0) 
+            thumby.display.drawSprite(Spr1)
+            Spr1.setFrame(Spr1.currentFrame+1)
+            thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
+            thumby.display.drawText("far,far away", 0,0, 1)
+            thumby.display.update()
+        else:
+            thumby.display.fill(0) 
+            thumby.display.drawSprite(Spr1)
+            Spr1.setFrame(Spr1.currentFrame+1)
     else:     
         thumby.display.fill(1) 
         thumby.display.drawSprite(Spr)
