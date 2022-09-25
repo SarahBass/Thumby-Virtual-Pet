@@ -329,9 +329,9 @@ while(True):
             thumby.display.drawSprite(Spr6)
             Spr6.setFrame(Spr6.currentFrame+1)
             thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
-            thumby.display.drawText("Level: ", 4,5, 1)
-            thumby.display.drawText("Happy: " , 4,15, 1)
-            thumby.display.drawText("Smart: " , 4,25, 1)
+            thumby.display.drawText("Level:" + str(starpet.level), 4,5, 1)
+            thumby.display.drawText("Happy:" + str(starpet.happy), 4,15, 1)
+            thumby.display.drawText("Smart:" + str(starpet.education), 4,25, 1)
             thumby.display.update()
     else:
         thumby.display.fill(0) 
