@@ -47,15 +47,17 @@ splashScreenFrames = bytearray([0,252,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
 # Make a sprite object using bytearray (a path to binary file from 'IMPORT SPRITE' is also valid)
 thumbySprite = thumby.Sprite(72, 40, Logo)
 
-# Set the FPS (without this call, the default fps is 30)
-thumby.display.setFPS(60)
 
-while(1):
-    t0 = time.ticks_ms()   # Get time (ms)
-    thumby.display.fill(0) # Fill canvas to black
-    
- # Display the bitmap using bitmap data, position, and bitmap dimensions
-    thumby.display.drawSprite(thumbySprite)
+Spr = thumby.Sprite(72, 40, splashScreenFrames) 
+
+# Increase this to make the flutter animation change frames faster
+thumby.display.setFPS(4) 
+
+while(True):
+    thumby.display.fill(1) 
+
+    thumby.display.drawSprite(Spr)
+    Spr.setFrame(Spr.currentFrame+1)
     thumby.display.update()
 
 ##############################################
@@ -250,3 +252,4 @@ pagetype =(BackgroundSwitch(starpet.level,
 #Hygene heals sick
 #Toys heal anger
 #Food heals sad
+
