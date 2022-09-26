@@ -1,0 +1,39 @@
+#Theme Music Start Screen (Can barely hear it on real device)
+def playmusic():
+    thumby.audio.playBlocking(262, 100)
+    thumby.audio.playBlocking(294, 100)
+    thumby.audio.playBlocking(162, 100)
+    thumby.audio.playBlocking(194, 100)
+    thumby.audio.playBlocking(94, 200)
+    thumby.audio.playBlocking(262, 100)
+    thumby.audio.playBlocking(294, 100)
+    thumby.audio.playBlocking(162, 100)
+    thumby.audio.playBlocking(194, 100)
+    thumby.audio.playBlocking(94, 200)
+    thumby.audio.playBlocking(262, 200)
+    thumby.audio.playBlocking(294, 200)
+    thumby.audio.playBlocking(162, 200)
+    thumby.audio.playBlocking(194, 200)
+    thumby.audio.playBlocking(262, 200)
+    thumby.audio.playBlocking(294, 200)
+    thumby.audio.playBlocking(162, 200)
+    thumby.audio.playBlocking(194, 400)
+# sound afirmative   
+def soundhappy():
+     thumby.audio.play(349, 100)
+     thumby.audio.play(392, 100)
+#sound negative
+def soundsad():
+     thumby.audio.play(349, 100)
+     thumby.audio.play(330, 100)
+#pulsing sound
+def playmusic2():
+    thumby.audio.playBlocking(262, 100)
+    thumby.audio.playBlocking(294, 100)
+    thumby.audio.playBlocking(162, 100)
+    thumby.audio.playBlocking(194, 100)
+
+#fast pulsing
+def playmusic3():
+    thumby.audio.playBlocking(362, 100)
+    thumby.audio.playBlocking(294, 100)
