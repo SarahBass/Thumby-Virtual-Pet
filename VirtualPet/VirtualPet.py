@@ -412,7 +412,7 @@ while(True):
         thumby.display.drawText(str(hundreds), 20,3, 1)
         thumby.display.drawText(game1.text, 10,20, 1)
         game1.userAnswer= ones+(tens*10)+(hundreds*100)
-        if game1.userAnswer == game.answer:
+        if game1.userAnswer == game1.answer:
             starpet.happy+=1
             starpet.edu+=1
         else:
