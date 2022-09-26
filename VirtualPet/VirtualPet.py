@@ -378,6 +378,7 @@ while(True):
                 pageNumber = 1
         thumby.display.update()
     elif pageNumber==2:
+        showimage(pagetype)
         place=0
         ones = 0
         tens = 0
@@ -408,8 +409,12 @@ while(True):
         thumby.display.drawText(str(tens), 30,3, 1)
         thumby.display.drawText(str(hundreds), 20,3, 1)
         thumby.display.drawText(game1.text, 10,20, 1)
-        userAnswer= ones+(tens*10)+(hundreds*100)
-        showimage(pagetype)
+        game1.userAnswer= ones+(tens*10)+(hundreds*100)
+        if game1.userAnswer == game.answer:
+            starpet.happy+=1
+            starpet.edu+=1
+        else:
+            starpet.angry+=1
         thumby.display.update()
     elif pageNumber==3:
         if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
@@ -424,6 +429,9 @@ while(True):
         thumby.display.drawSprite(Spr8)
         Spr8.setFrame(Spr8.currentFrame+1)
         thumby.display.update()
+        starpet.level+=1
+        starpet.happy-=1
+        starpet.food+=1
     elif pageNumber==4:
         if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
             selector = 1
@@ -437,6 +445,9 @@ while(True):
         thumby.display.drawSprite(Spr9)
         Spr9.setFrame(Spr9.currentFrame+1)
         thumby.display.update()
+        starpet.toy+=1
+        starpet.happy+=1
+        starpet.angry-=1
     elif pageNumber==5:
         if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
             selector = 1
@@ -450,6 +461,9 @@ while(True):
         thumby.display.drawSprite(Spr10)
         Spr10.setFrame(Spr10.currentFrame+1)
         thumby.display.update()
+        starpet.sick-=1
+        starpet.happy+=1
+        starpet.hyg+=1
     else:
         thumby.display.fill(0) 
         thumby.display.drawSprite(Spr)
