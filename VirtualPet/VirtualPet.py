@@ -385,6 +385,8 @@ while(True):
         hundreds = 0
         if place > 2:
             place = 0
+        if thumby.buttonB.pressed():
+            pageNumber=1    
         if thumby.buttonR.pressed():
             place+=1
         if thumby.buttonL.pressed():
@@ -417,6 +419,8 @@ while(True):
             starpet.angry+=1
         thumby.display.update()
     elif pageNumber==3:
+        if thumby.buttonB.pressed():
+            pageNumber=1
         if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
             selector = 1
         elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
@@ -433,6 +437,8 @@ while(True):
         starpet.happy-=1
         starpet.food+=1
     elif pageNumber==4:
+        if thumby.buttonB.pressed():
+            pageNumber=1
         if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
             selector = 1
         elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
@@ -449,6 +455,8 @@ while(True):
         starpet.happy+=1
         starpet.angry-=1
     elif pageNumber==5:
+        if thumby.buttonB.pressed():
+            pageNumber=1
         if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
             selector = 1
         elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
