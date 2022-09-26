@@ -131,7 +131,7 @@ Spr1 = thumby.Sprite(72, 40, introFrames)
 Spr2 = thumby.Sprite(72, 40, supernovaFrames) 
 Spr3 = thumby.Sprite(72, 40, galaxyFrames) 
 Spr5 = thumby.Sprite(72, 40, shortFrames) 
-Spr7 = thumby.Sprite(72, 8, topchoiceFrames) 
+Spr7 = thumby.Sprite(72, 9, topchoiceFrames) 
 Spr8 = thumby.Sprite(72, 8, foodFrames)
 Spr9 = thumby.Sprite(72, 8, toyFrames)
 Spr10 = thumby.Sprite(72, 8, hygFrames) 
@@ -410,9 +410,11 @@ while(True):
                 hundreds-=1    
             data=False    
         thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
-        thumby.display.drawText(ones, 40,3, 1)
-        thumby.display.drawText(tens, 30,3, 1)
-        thumby.display.drawText(hundreds, 20,3, 1)
+        thumby.display.drawText(str(ones), 40,3, 1)
+        thumby.display.drawText(str(tens), 30,3, 1)
+        thumby.display.drawText(str(hundreds), 20,3, 1)
+        thumby.display.drawText(game1.text, 10,20, 1)
+        userAnswer= ones+(tens*10)+(hundreds*100)
         showimage(pagetype)
         thumby.display.update()
     elif pageNumber==3:
