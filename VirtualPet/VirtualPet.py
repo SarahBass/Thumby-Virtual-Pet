@@ -293,8 +293,10 @@ while(True):
                 else: 
                     pageNumber = 1
                 thumby.display.update()
-    #MINI GAME PAGE ----------------------------------------------
+    #MINI GAME PAGE ----------------------------------------------------------------------
+    #The logic here is to control the input of the user and generate a Question and Answer
     elif pageNumber==2:
+        #This logic Calls on the background
         Spr = thumby.Sprite(72, 40, gameFrames)
         place=0
         ones = 0
@@ -304,14 +306,15 @@ while(True):
             thumby.display.drawSprite(Spr)
             Spr.setFrame(Spr.currentFrame+1)
             thumby.display.drawText(game1.text, 3,20, 1)
-                
+    #This logic toggles between the input zones            
             if place > 2:
                 place = 0
             if place < 0:
                 place = 0
-                
+    #This logic Exits the Page with no Effects 
             if thumby.buttonB.pressed():
                 pageNumber=1    
+    #This logic controls the user input from 0-9 for a three digit number
             if thumby.buttonR.pressed():
                 place-=1
             if thumby.buttonL.pressed():
@@ -330,12 +333,16 @@ while(True):
                     tens-=1
                 elif place ==2:
                     hundreds-=1    
-                data=False    
+                data=False 
+            #This logic shows the text above the animated background    
             thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
             thumby.display.drawText(str(ones), 55,2, 1)
             thumby.display.drawText(str(tens), 45,2, 1)
             thumby.display.drawText(str(hundreds), 35,2, 1)
+            #This logic submits the user answer 
             game1.userAnswer= ones+(tens*10)+(hundreds*100)
+            #This logic gives you positive or negative points
+            #It also exits the mini game to return to main screen
             if thumby.buttonA.pressed():
                 if game1.userAnswer == game1.answer:
                     starpet.happy+=1
