@@ -270,9 +270,12 @@ while(True):
             #SHOW PET MOOD BACKGROUND
             Spr = thumby.Sprite(72, 40, introFrames)
             #SHOW OPTIONS MENU ANIMATION
+            SprX = thumby.Sprite(72, 9, topchoiceFrames)
             while (data == False and pageNumber==1):
                 thumby.display.drawSprite(Spr)
                 Spr.setFrame(Spr.currentFrame+1)
+                thumby.display.drawSprite(SprX)
+                SprX.setFrame(SprX.currentFrame+1)
                 #UP AND DOWN BUTTONS SET FOR DATA ON OR OFF
                 if thumby.buttonU.pressed():
                     data=True
