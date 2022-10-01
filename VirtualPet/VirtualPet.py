@@ -194,7 +194,7 @@ while(True):
     #print('Memory Free:', "{:,}".format(gc.mem_free()), 'bytes')
     #print('Memory Allocated:', "{:,}".format(gc.mem_alloc()), 'bytes')
     
-    if pagetype == "startscreen":
+    if pageNumber==0:
         if thumby.buttonA.pressed():
             abutton=abutton+1
     #PLAY INTRO BY PRESSING A SLIDE BY SLIDE
@@ -246,7 +246,7 @@ while(True):
         if thumby.buttonD.pressed():
             data=False    
     #DATA PAGE IF PRESS UP -------------------------------------   
-        if pagetype  == "dataon":
+        if data == True:
             thumby.display.fill(0)
             thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
             thumby.display.drawText("Level:" + str(starpet.level), 4,5, 1)
