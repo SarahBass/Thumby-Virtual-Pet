@@ -242,7 +242,7 @@ while(True):
             abutton = abutton+1
         else:
             Spr = thumby.Sprite(72, 40, shortFrames) 
-            while (abutton > 4 && pageNumber==0):
+            while (abutton > 4 and pageNumber==0):
                 thumby.display.drawSprite(Spr)
                 Spr.setFrame(Spr.currentFrame+1)
                 thumby.display.update()
@@ -264,21 +264,22 @@ while(True):
             thumby.display.drawText("Happy:" + str(starpet.happy), 4,15, 1)
             thumby.display.drawText("Smart:" + str(starpet.edu), 4,25, 1)
         else:
-    #PET MOOD DISPLAYED AND USER OPTIONS ----------------------------       
+    #PET MOOD DISPLAYED AND USER OPTIONS ----------------------------
             Spr = thumby.Sprite(72, 40, introFrames) 
-            thumby.display.drawSprite(Spr)
-            Spr.setFrame(Spr.currentFrame+1)
-            if time.ticks_ms()%4 ==0 and thumby.buttonA.pressed():
-                pageNumber = 2
-            elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
-                pageNumber = 3
-            elif time.ticks_ms()%4 ==2 and thumby.buttonA.pressed():
-                pageNumber = 4
-            elif time.ticks_ms()%4 ==3 and thumby.buttonA.pressed():
-                pageNumber = 5
-            else: 
-                pageNumber = 1
-        thumby.display.update()
+            while (data == False and pageNumber==1):
+                thumby.display.drawSprite(Spr)
+                Spr.setFrame(Spr.currentFrame+1)
+                if time.ticks_ms()%4 ==0 and thumby.buttonA.pressed():
+                    pageNumber = 2
+                elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
+                    pageNumber = 3
+                elif time.ticks_ms()%4 ==2 and thumby.buttonA.pressed():
+                    pageNumber = 4
+                elif time.ticks_ms()%4 ==3 and thumby.buttonA.pressed():
+                    pageNumber = 5
+                else: 
+                    pageNumber = 1
+                thumby.display.update()
     #MINI GAME PAGE ----------------------------------------------
     elif pageNumber==2:
         Spr = thumby.Sprite(72, 40, gameFrames)
