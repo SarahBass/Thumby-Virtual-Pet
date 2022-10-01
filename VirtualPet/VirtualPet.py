@@ -195,35 +195,45 @@ while(True):
     #print('Memory Allocated:', "{:,}".format(gc.mem_alloc()), 'bytes')
     
     if pageNumber==0:
-        if thumby.buttonA.pressed():
-            abutton=abutton+1
     #PLAY INTRO BY PRESSING A SLIDE BY SLIDE
-        if abutton == 0:
-            Spr = thumby.Sprite(72, 40, introFrames) 
-            thumby.display.drawSprite(Spr)
-            Spr.setFrame(Spr.currentFrame+1)
-            thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
-            thumby.display.drawText("In a Galaxy", 0,0, 1)
-            thumby.display.update()
+        if (abutton == 0):
+            Spr = thumby.Sprite(72, 40, introFrames)
+            while (abutton == 0):
+                Spr.setFrame(Spr.currentFrame+1)
+                thumby.display.drawSprite(Spr)
+                thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
+                thumby.display.drawText("In a Galaxy", 0,0, 1)
+                thumby.display.update()
+                if thumby.buttonA.pressed():
+                    abutton=abutton+1
         elif abutton == 1:
             Spr = thumby.Sprite(72, 40, introFrames) 
-            thumby.display.drawSprite(Spr)
-            Spr.setFrame(Spr.currentFrame+1)
-            thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
-            thumby.display.drawText("far,far away", 0,0, 1)
-            thumby.display.update()
+            while (abutton == 1):
+                thumby.display.drawSprite(Spr)
+                Spr.setFrame(Spr.currentFrame+1)
+                thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
+                thumby.display.drawText("far,far away", 0,0, 1)
+                if thumby.buttonA.pressed():
+                    abutton=abutton+1
+                thumby.display.update()
         elif abutton == 2:
             Spr = thumby.Sprite(72, 40, supernovaFrames) 
-            thumby.display.drawSprite(Spr)
-            Spr.setFrame(Spr.currentFrame+1)
-            thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
-            thumby.display.drawText(" a new star!", 0,0, 1)
-            thumby.display.update()
+            while (abutton == 2):
+                thumby.display.drawSprite(Spr)
+                Spr.setFrame(Spr.currentFrame+1)
+                thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
+                thumby.display.drawText(" a new star!", 0,0, 1)
+                if thumby.buttonA.pressed():
+                    abutton=abutton+1
+                thumby.display.update()
         elif abutton == 3:
             Spr = thumby.Sprite(72, 40, galaxyFrames)
-            thumby.display.drawSprite(Spr)
-            Spr.setFrame(Spr.currentFrame+1)
-            thumby.display.update()
+            while (abutton == 3):
+                thumby.display.drawSprite(Spr)
+                Spr.setFrame(Spr.currentFrame+1)
+                if thumby.buttonA.pressed():
+                    abutton=abutton+1
+                thumby.display.update()
         elif abutton == 4:
             Spr = thumby.Sprite(72, 40, splashScreenFrames) 
             thumby.display.drawSprite(Spr)
@@ -232,13 +242,14 @@ while(True):
             abutton = abutton+1
         else:
             Spr = thumby.Sprite(72, 40, shortFrames) 
-            thumby.display.drawSprite(Spr)
-            Spr.setFrame(Spr.currentFrame+1)
-            thumby.display.update()
-            if thumby.buttonA.pressed():
-                pageNumber = 1
-            if thumby.buttonB.pressed():
-                thumby.reset() # exit game to main menu   
+            while (abutton == 4):
+                thumby.display.drawSprite(Spr)
+                Spr.setFrame(Spr.currentFrame+1)
+                thumby.display.update()
+                if thumby.buttonA.pressed():
+                    pageNumber = 1
+                if thumby.buttonB.pressed():
+                    thumby.reset() # exit game to main menu   
     #GAME START AT PET PAGE----------------------------------
     elif pageNumber==1:
         if thumby.buttonU.pressed():
