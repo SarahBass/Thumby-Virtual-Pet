@@ -149,14 +149,8 @@ starpet = Star(0,0,0,0,0,5,0,0,0)
 ###########################################################################################
 
 
-def BackgroundSwitch(level,sad, sick, angry,happy, pageNumber,data)-> str:
- 
-    if data == True:
-        return "dataon"
-    elif pageNumber == 1:
-        if level == 10:
-            return "gameover"
-        elif level == range(7,9):
+def BackgroundSwitch(level,sad, sick, angry,happy)-> str:
+        elif level > 5:
             if sick > 0:
                 return "starsick"
             elif angry >0:
@@ -164,30 +158,10 @@ def BackgroundSwitch(level,sad, sick, angry,happy, pageNumber,data)-> str:
             elif sad > 0:
                 return "starsad"
             else :
-                if happy > 8:
-                    return "superhappystar"
-                elif happy == range(7,8):
+                if happy > 5:
                     return "happystar"
-                elif happy == range(5,6):
-                    return "averagestar"
                 else:
-                    return "sadstar"
-        elif level ==range(3,6):
-            if sick > 0:
-                return "nebulasick"
-            elif angry >0:
-                return "nebulaangry"
-            elif sad > 0:
-                return "nebulasad"
-            else :
-                if happy > 8:
-                    return "superhappynebula"
-                elif happy == range(7,8):
-                    return "happynebula"
-                elif happy == range(5,6):
-                    return "averagenebula"
-                else:
-                    return "sadnebula"
+                    return "star"
         else :
             if sick > 0:
                 return "gassick"
@@ -196,66 +170,22 @@ def BackgroundSwitch(level,sad, sick, angry,happy, pageNumber,data)-> str:
             elif sad > 0:
                 return "gassad"
             else :
-                if happy > 8:
-                    return "superhappygas"
-                elif happy == range(7,8):
+                if happy > 5:
                     return "happygas"
-                elif happy == range(5,6):
-                    return "averagegas"
                 else:
                     return "sadgas"
-    elif pageNumber == 2:
-        return "game"
-        #return random.choice(gameLibrary)
-    elif pageNumber == 3:
-        if selector == 1:
-            return "funfood"
-        elif selector == 2:
-            return "meteor"
-        elif selector == 3:
-            return "shootingstar"
-        else:
-            return "food"
-    elif pageNumber == 4:
-        if selector == 1:
-            return "animal"
-        elif selector == 2:
-            return "spaceship"
-        elif selector == 3:
-            return "satelite"
-        else:
-            return "toy"
-    elif pageNumber == 5:
-        if selector == 1:
-            return "bath"
-        elif selector == 2:
-            return "brush"
-        elif selector == 3:
-            return "medicine"
-        else:
-            return "hyg"
-    else:
-        return "startscreen"
+
 
 pagetype =(BackgroundSwitch(starpet.level,
                             starpet.sad,
                             starpet.sick,
                             starpet.angry,
-                            starpet.happy,
-                            pageNumber,
-                            data))         
+                            starpet.happy))         
 
 
 #-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=--=x=
 #                        START OF GAME                           # 
 #-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=--=x=
-
-
-
-
-
-
-
 
 while(True):
     gc.collect()     
@@ -263,7 +193,7 @@ while(True):
     #CHECK MEMORY USAGE EVERY WHILE LOOP (WHICH USES MEMORY TO DO)
     #print('Memory Free:', "{:,}".format(gc.mem_free()), 'bytes')
     #print('Memory Allocated:', "{:,}".format(gc.mem_alloc()), 'bytes')
-    pagetype =(BackgroundSwitch(starpet.level,starpet.sad,starpet.sick,starpet.angry,starpet.happy,pageNumber,data))       
+    
     if pagetype == "startscreen":
         if thumby.buttonA.pressed():
             abutton=abutton+1
@@ -315,7 +245,7 @@ while(True):
             data=True
         if thumby.buttonD.pressed():
             data=False    
-    #DATA PAGE IF PRESS UP    
+    #DATA PAGE IF PRESS UP -------------------------------------   
         if pagetype  == "dataon":
             thumby.display.fill(0)
             thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
@@ -323,6 +253,8 @@ while(True):
             thumby.display.drawText("Happy:" + str(starpet.happy), 4,15, 1)
             thumby.display.drawText("Smart:" + str(starpet.edu), 4,25, 1)
         else:
+    #PET MOOD DISPLAYED AND USER OPTIONS ----------------------------       
+            Spr = thumby.Sprite(72, 40, introFrames) 
             thumby.display.drawSprite(Spr)
             Spr.setFrame(Spr.currentFrame+1)
             if time.ticks_ms()%4 ==0 and thumby.buttonA.pressed():
