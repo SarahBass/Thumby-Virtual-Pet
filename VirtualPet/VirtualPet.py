@@ -242,7 +242,7 @@ while(True):
             abutton = abutton+1
         else:
             Spr = thumby.Sprite(72, 40, shortFrames) 
-            while (abutton == 4):
+            while (abutton > 4):
                 thumby.display.drawSprite(Spr)
                 Spr.setFrame(Spr.currentFrame+1)
                 thumby.display.update()
