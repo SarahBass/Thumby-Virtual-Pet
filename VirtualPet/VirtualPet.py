@@ -273,6 +273,9 @@ while(True):
             thumby.display.update()    
         else:
     #PET MOOD DISPLAYED AND USER OPTIONS ----------------------------
+            #If you repeat action twice, negative effect
+            #Every Action Resets Values of other Actions
+            
             #SHOW PET MOOD BACKGROUND
             Spr = thumby.Sprite(72, 40, introFrames)
             #SHOW OPTIONS MENU ANIMATION
@@ -353,6 +356,10 @@ while(True):
                 if game1.userAnswer == game1.answer:
                     starpet.happy+=1
                     starpet.edu+=1
+                    starpet.sad = 0
+                    starpet.food =0
+                    starpet.hyg =0
+                    starpet.toy = 0
                 if game1.userAnswer != game1.answer:
                     starpet.angry+=1
                 pageNumber = 1    
@@ -365,12 +372,17 @@ while(True):
         while (pageNumber ==3):
             thumby.display.drawSprite(Spr)
             Spr.setFrame(Spr.currentFrame+1)
-            thumby.display.drawText("Level Up! [B]", 0,30, 1)
+            thumby.display.drawText("Level Up![B]", 0,30, 1)
             if thumby.buttonB.pressed():
                 pageNumber=1
                 starpet.level+=1
                 starpet.happy-=1
                 starpet.food+=1
+                starpet.toy=0
+                starpet.sad =0
+                starpet.hyg =0
+                if (starpet.food>1):
+                    starpet.sick +=1
             thumby.display.update()    
     #FILL BLACK    
    #TOY PAGE---------------------------------------------------------
@@ -383,24 +395,20 @@ while(True):
                 pageNumber=1
                 starpet.toy+=1
                 starpet.happy+=1
-                starpet.angry-=1
-            if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
-                selector = 1
-            elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
-                selector = 2
-            elif time.ticks_ms()%4 ==2 and thumby.buttonA.pressed():
-                selector = 3
-            else: 
-                selector = 0
+                starpet.angry=0
+                starpet.food=0
+                starpet.hyg=0
+                if (starpet.toy >1):
+                    starpet.sad+=1
             thumby.display.update()
     #CARE FOR PET PAGE ------------------------------------------------
     elif pageNumber==5:
         thumby.display.fill(0)
         if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
             Spr = thumby.Sprite(20, 30, healFrames)   
-        elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
+        if time.ticks_ms()%3 ==1 and thumby.buttonA.pressed():
             Spr = thumby.Sprite(30, 30, healFrames) 
-        elif time.ticks_ms()%4 ==2 and thumby.buttonA.pressed():
+        if time.ticks_ms()%3 ==2 and thumby.buttonA.pressed():
             Spr = thumby.Sprite(30, 30, healFrames) 
         SprX = thumby.Sprite(72, 8, hygFrames) 
         while (pageNumber == 5):
@@ -411,9 +419,13 @@ while(True):
             thumby.display.drawText("Sick: "+ str(starpet.sick), 0,30, 1)
             if thumby.buttonB.pressed():
                 pageNumber=1
-                starpet.sick-=1
+                starpet.sick=0
                 starpet.happy+=1
                 starpet.hyg+=1
+                starpet.toy = 0
+                starpet.food = 0
+                if (starpet.hyg > 1):
+                    starpet.sad +=1
             thumby.display.update()
     #END OF OPTIONS -------------------------------------------------
     else:
