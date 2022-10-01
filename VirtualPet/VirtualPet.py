@@ -360,43 +360,45 @@ while(True):
     #FILL BLACK    
    #TOY PAGE---------------------------------------------------------
     elif pageNumber==4:
-        if thumby.buttonB.pressed():
-            pageNumber=1
-            starpet.toy+=1
-            starpet.happy+=1
-            starpet.angry-=1
-        if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
-            selector = 1
-        elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
-            selector = 2
-        elif time.ticks_ms()%4 ==2 and thumby.buttonA.pressed():
-            selector = 3
-        else: 
-            selector = 0
-        Spr = thumby.Sprite(72, 8, toyFrames)
-        thumby.display.drawSprite(Spr)
-        Spr.setFrame(Spr.currentFrame+1)
+        SprX = thumby.Sprite(72, 8, toyFrames)
+        while (PageNumber == 4):
+            thumby.display.drawSprite(SprX)
+            SprX.setFrame(SprX.currentFrame+1)
+            if thumby.buttonB.pressed():
+                pageNumber=1
+                starpet.toy+=1
+                starpet.happy+=1
+                starpet.angry-=1
+            if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
+                selector = 1
+            elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
+                selector = 2
+            elif time.ticks_ms()%4 ==2 and thumby.buttonA.pressed():
+                selector = 3
+            else: 
+                selector = 0
         thumby.display.update()
     #CARE FOR PET PAGE ------------------------------------------------
     elif pageNumber==5:
         thumby.display.fill(0)
-        if thumby.buttonB.pressed():
-            pageNumber=1
-            starpet.sick-=1
-            starpet.happy+=1
-            starpet.hyg+=1
-        if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
-            selector = 1
-        elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
-            selector = 2
-        elif time.ticks_ms()%4 ==2 and thumby.buttonA.pressed():
-            selector = 3
-        else: 
-            selector = 0
-        Spr = thumby.Sprite(72, 8, hygFrames) 
-        thumby.display.drawSprite(Spr)
-        Spr.setFrame(Spr.currentFrame+1)
-        thumby.display.update()
+        SprX = thumby.Sprite(72, 8, hygFrames) 
+        while (PageNumber == 4):
+            thumby.display.drawSprite(Spr)
+            Spr.setFrame(Spr.currentFrame+1)
+            if thumby.buttonB.pressed():
+                pageNumber=1
+                starpet.sick-=1
+                starpet.happy+=1
+                starpet.hyg+=1
+            if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
+                selector = 1
+            elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
+                selector = 2
+            elif time.ticks_ms()%4 ==2 and thumby.buttonA.pressed():
+                selector = 3
+            else: 
+                selector = 0
+            thumby.display.update()
     #END OF OPTIONS -------------------------------------------------
     else:
         thumby.display.fill(0) 
