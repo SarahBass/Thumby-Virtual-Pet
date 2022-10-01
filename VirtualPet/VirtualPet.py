@@ -78,7 +78,7 @@ choose = bytearray([0,252,254,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
            0,255,128,0,170,0,136,0,170,0,136,0,170,0,136,0,170,0,136,0,170,0,136,0,170,0,136,0,170,0,136,0,170,63,187,255,191,255,255,255,255,255,255,255,255,255,255,255,255,192,192,223,192,255,255,255,255,255,255,255,255,255,255,255,255,255,187,127,170,0,255,0,
            0,127,128,128,138,128,136,128,170,128,136,128,138,128,136,128,138,128,136,128,138,128,136,128,170,128,136,128,170,128,136,128,170,128,136,129,170,135,139,143,171,159,159,159,191,191,191,191,191,176,180,182,176,191,191,191,191,191,191,191,175,159,159,143,171,131,137,128,138,128,127,0])
 gameFrames = bytearray([255,1,1,249,133,117,85,149,253,5,213,5,253,5,245,237,245,5,253,5,85,85,249,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,255,255,0,248,200,249,121,49,1,249,25,25,249,1,1,249,249,49,97,49,25,249,1,0,248,216,88,248,0,248,248,48,96,248,248,0,4,252,4,252,244,4,252,4,252,4,0,224,240,24,8,0,0,0,64,64,192,64,64,192,192,192,64,64,0,80,224,176,224,80,0,0,255,255,0,3,0,1,3,2,0,3,3,3,3,0,0,3,3,0,0,0,0,3,0,0,3,3,0,3,0,3,3,0,0,3,3,0,2,3,2,2,3,2,3,2,3,2,0,96,9,11,10,32,144,136,36,18,19,34,3,35,18,19,36,159,176,1,32,17,8,9,80,0,255,255,0,56,122,112,4,0,0,0,0,0,0,0,0,0,128,128,128,128,0,0,0,128,192,224,0,0,0,0,0,128,128,192,64,64,64,192,192,128,0,0,192,64,64,128,0,1,130,68,56,0,0,0,64,0,128,1,1,1,128,0,0,0,0,0,0,56,196,2,0,0,255,255,128,128,144,130,131,177,189,157,143,135,130,134,140,143,143,147,145,144,144,144,144,147,159,159,136,140,142,159,189,249,176,128,128,128,132,143,159,129,129,134,136,136,136,135,128,128,149,144,128,144,128,136,128,136,132,131,128,128,135,132,128,136,136,128,144,128,147,128,128,128,255,255,1,1,249,133,117,85,149,253,5,213,5,253,5,245,237,245,5,253,5,85,85,249,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,255,255,0,248,200,249,121,49,1,249,25,25,249,1,1,249,249,49,97,49,25,249,1,0,248,216,88,248,0,248,248,48,96,248,248,0,4,252,4,252,244,4,252,4,252,4,0,192,224,48,16,0,0,0,64,64,192,192,64,192,64,192,64,64,0,160,192,96,192,160,0,0,255,255,0,3,0,1,3,2,0,3,3,3,3,0,0,3,3,0,0,0,0,3,0,0,3,3,0,3,0,3,3,0,0,3,3,0,2,3,2,2,3,2,3,2,3,2,0,209,3,22,20,32,144,136,36,66,67,34,2,35,67,67,36,139,176,2,65,35,17,18,160,0,255,255,48,120,112,96,0,0,0,0,0,0,0,0,0,0,0,128,128,128,0,0,0,128,192,0,0,0,0,0,0,128,128,192,64,64,64,192,192,128,0,0,64,32,32,192,0,2,4,136,80,32,0,0,128,0,0,1,1,1,0,0,0,0,0,0,32,80,136,4,2,0,255,255,128,128,128,130,131,161,185,157,159,143,130,134,140,142,143,159,151,144,144,144,144,159,159,158,136,140,158,191,185,241,128,128,128,128,142,143,135,129,129,131,134,132,132,131,128,128,149,160,128,160,128,144,128,144,137,134,128,128,134,136,128,144,144,128,160,128,174,128,128,128,255])
-    # 72x40 for 2 frames
+   
 gc.collect()  
 gc.threshold(gc.mem_free() // 4 + gc.mem_alloc())
 thumby.display.setFPS(4) 
@@ -107,14 +107,6 @@ thumby.display.setFPS(4)
 #    gc.threshold(gc.mem_free() // 4 + gc.mem_alloc())
 
 
-Spr = thumby.Sprite(72, 40, splashScreenFrames) 
-Spr1 = thumby.Sprite(72, 40, introFrames) 
-Spr2 = thumby.Sprite(72, 40, supernovaFrames) 
-Spr3 = thumby.Sprite(72, 40, galaxyFrames) 
-Spr5 = thumby.Sprite(72, 40, shortFrames) 
-Spr7 = thumby.Sprite(72, 9, topchoiceFrames) 
-Spr9 = thumby.Sprite(72, 8, toyFrames)
-Spr10 = thumby.Sprite(72, 8, hygFrames) 
 ###########################################################################################
 ###################MINI GAME LOGIC ########################################################
 ###########################################################################################
@@ -278,52 +270,58 @@ pagetype =(BackgroundSwitch(starpet.level,
 #                        START OF GAME                           # 
 #-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=-=x=--=x=
 
+
+
+
+
+
+
+
 while(True):
     gc.collect()     
     gc.threshold(gc.mem_free() // 4 + gc.mem_alloc()) 
-    #thumby.audio.stop()
+    #CHECK MEMORY USAGE EVERY WHILE LOOP (WHICH USES MEMORY TO DO)
     #print('Memory Free:', "{:,}".format(gc.mem_free()), 'bytes')
     #print('Memory Allocated:', "{:,}".format(gc.mem_alloc()), 'bytes')
     pagetype =(BackgroundSwitch(starpet.level,starpet.sad,starpet.sick,starpet.angry,starpet.happy,pageNumber,data))       
     if pagetype == "startscreen":
         if thumby.buttonA.pressed():
             abutton=abutton+1
-        #if abutton == 0:
-            #playmusic()
-            #Add logic for saved game here to skip intro
-            #thumby.display.drawText("PRESS A", 20,22, 1)
-            #thumby.display.update()
-            #thumby.display.drawSprite(uponSprite)
-            #thumby.display.update()
-        if abutton == 0:
-            Spr=
+    #PLAY INTRO BY PRESSING A SLIDE BY SLIDE
+          if abutton == 0:
+            Spr = thumby.Sprite(72, 40, introFrames) 
             thumby.display.drawSprite(Spr)
             Spr.setFrame(Spr.currentFrame+1)
             thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
             thumby.display.drawText("In a Galaxy", 0,0, 1)
             thumby.display.update()
         elif abutton == 1:
+            Spr = thumby.Sprite(72, 40, introFrames) 
             thumby.display.drawSprite(Spr)
             Spr.setFrame(Spr.currentFrame+1)
             thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
             thumby.display.drawText("far,far away", 0,0, 1)
             thumby.display.update()
         elif abutton == 2:
+            Spr = thumby.Sprite(72, 40, supernovaFrames) 
             thumby.display.drawSprite(Spr)
             Spr.setFrame(Spr.currentFrame+1)
             thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
             thumby.display.drawText(" a new star!", 0,0, 1)
             thumby.display.update()
         elif abutton == 3:
+            Spr = thumby.Sprite(72, 40, galaxyFrames)
             thumby.display.drawSprite(Spr)
             Spr.setFrame(Spr.currentFrame+1)
             thumby.display.update()
         elif abutton == 4:
+            Spr = thumby.Sprite(72, 40, splashScreenFrames) 
             thumby.display.drawSprite(Spr)
             Spr.setFrame(Spr.currentFrame+1)
             thumby.display.update()
             abutton = abutton+1
         else:
+            Spr = thumby.Sprite(72, 40, shortFrames) 
             thumby.display.drawSprite(Spr)
             Spr.setFrame(Spr.currentFrame+1)
             thumby.display.update()
@@ -331,11 +329,13 @@ while(True):
                 pageNumber = 1
             if thumby.buttonB.pressed():
                 thumby.reset() # exit game to main menu   
+    #GAME START AT PET PAGE----------------------------------
     elif pageNumber==1:
         if thumby.buttonU.pressed():
             data=True
         if thumby.buttonD.pressed():
             data=False    
+    #DATA PAGE IF PRESS UP    
         if pagetype  == "dataon":
             thumby.display.fill(0)
             thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
@@ -356,8 +356,12 @@ while(True):
             else: 
                 pageNumber = 1
         thumby.display.update()
+    #MINI GAME PAGE ----------------------------------------------
     elif pageNumber==2:
-        
+        Spr = thumby.Sprite(72, 40, gameFrames)
+        thumby.display.drawSprite(Spr)
+        Spr.setFrame(Spr.currentFrame+1)
+        thumby.display.update()
         place=0
         ones = 0
         tens = 0
@@ -399,6 +403,8 @@ while(True):
                 starpet.angry+=1
             pageNumber = 1    
         thumby.display.update()
+    
+    #FOOD PAGE---------------------------------------------
     elif pageNumber==3:
         thumby.display.fill(0)
         if thumby.buttonB.pressed():
@@ -414,10 +420,8 @@ while(True):
                 selector = 3
         else: 
             selector = 0
-        
-        thumby.display.drawSprite(Spr)
-        Spr.setFrame(Spr.currentFrame+1)
-        thumby.display.update()
+    #FILL BLACK    
+   #TOY PAGE---------------------------------------------------------
     elif pageNumber==4:
         if thumby.buttonB.pressed():
             pageNumber=1
@@ -432,10 +436,11 @@ while(True):
             selector = 3
         else: 
             selector = 0
-        
+        Spr = thumby.Sprite(72, 8, toyFrames)
         thumby.display.drawSprite(Spr)
         Spr.setFrame(Spr.currentFrame+1)
         thumby.display.update()
+    #CARE FOR PET PAGE ------------------------------------------------
     elif pageNumber==5:
         thumby.display.fill(0)
         if thumby.buttonB.pressed():
@@ -451,14 +456,13 @@ while(True):
             selector = 3
         else: 
             selector = 0
-       
+        Spr = thumby.Sprite(72, 8, hygFrames) 
         thumby.display.drawSprite(Spr)
         Spr.setFrame(Spr.currentFrame+1)
         thumby.display.update()
+    #END OF OPTIONS -------------------------------------------------
     else:
         thumby.display.fill(0) 
-        thumby.display.drawSprite(Spr)
-        Spr.setFrame(Spr.currentFrame+1)
         thumby.display.update()
-    
+    #END OF WHILE LOOP ----------------------------------------------
     
