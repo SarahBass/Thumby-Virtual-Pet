@@ -141,7 +141,7 @@ class Star:
         self.edu = edu
         self.level= level 
        
-starpet = Star(0,0,0,0,0,5,0,0,0)
+starpet = Star(0,0,0,0,0,4,0,0,0)
 
 
 ###########################################################################################
@@ -361,7 +361,7 @@ while(True):
    #TOY PAGE---------------------------------------------------------
     elif pageNumber==4:
         SprX = thumby.Sprite(72, 8, toyFrames)
-        while (PageNumber == 4):
+        while (pageNumber == 4):
             thumby.display.drawSprite(SprX)
             SprX.setFrame(SprX.currentFrame+1)
             if thumby.buttonB.pressed():
@@ -377,14 +377,14 @@ while(True):
                 selector = 3
             else: 
                 selector = 0
-        thumby.display.update()
+            thumby.display.update()
     #CARE FOR PET PAGE ------------------------------------------------
     elif pageNumber==5:
         thumby.display.fill(0)
         SprX = thumby.Sprite(72, 8, hygFrames) 
-        while (PageNumber == 4):
-            thumby.display.drawSprite(Spr)
-            Spr.setFrame(Spr.currentFrame+1)
+        while (pageNumber == 5):
+            thumby.display.drawSprite(SprX)
+            SprX.setFrame(SprX.currentFrame+1)
             if thumby.buttonB.pressed():
                 pageNumber=1
                 starpet.sick-=1
