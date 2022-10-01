@@ -150,7 +150,7 @@ starpet = Star(0,0,0,0,0,5,0,0,0)
 
 
 def BackgroundSwitch(level,sad, sick, angry,happy)-> str:
-        elif level > 5:
+        if level > 5:
             if sick > 0:
                 return "starsick"
             elif angry >0:
@@ -198,7 +198,7 @@ while(True):
         if thumby.buttonA.pressed():
             abutton=abutton+1
     #PLAY INTRO BY PRESSING A SLIDE BY SLIDE
-          if abutton == 0:
+        if abutton == 0:
             Spr = thumby.Sprite(72, 40, introFrames) 
             thumby.display.drawSprite(Spr)
             Spr.setFrame(Spr.currentFrame+1)
@@ -302,10 +302,10 @@ while(True):
                 hundreds-=1    
             data=False    
         thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
-        thumby.display.drawText(str(ones), 55,3, 1)
-        thumby.display.drawText(str(tens), 45,3, 1)
-        thumby.display.drawText(str(hundreds), 35,3, 1)
-        thumby.display.drawText(game1.text, 10,20, 1)
+        thumby.display.drawText(str(ones), 55,2, 1)
+        thumby.display.drawText(str(tens), 45,2, 1)
+        thumby.display.drawText(str(hundreds), 35,2, 1)
+        thumby.display.drawText(game1.text, 10,18, 1)
         game1.userAnswer= ones+(tens*10)+(hundreds*100)
         if thumby.buttonA.pressed():
             if game1.userAnswer == game1.answer:
