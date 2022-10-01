@@ -250,12 +250,8 @@ while(True):
                     pageNumber = 1
                 if thumby.buttonB.pressed():
                     thumby.reset() # exit game to main menu   
-    #GAME START AT PET PAGE----------------------------------
+    #START AT PET PAGE------------------------------------------
     elif pageNumber==1:
-        if thumby.buttonU.pressed():
-            data=True
-        if thumby.buttonD.pressed():
-            data=False    
     #DATA PAGE IF PRESS UP -------------------------------------   
         if data == True:
             thumby.display.fill(0)
@@ -263,12 +259,26 @@ while(True):
             thumby.display.drawText("Level:" + str(starpet.level), 4,5, 1)
             thumby.display.drawText("Happy:" + str(starpet.happy), 4,15, 1)
             thumby.display.drawText("Smart:" + str(starpet.edu), 4,25, 1)
+            #UP AND DOWN BUTTONS SET FOR DATA ON OR OFF
+            if thumby.buttonU.pressed():
+                data=True
+            if thumby.buttonD.pressed():
+                data=False
+            thumby.display.update()    
         else:
     #PET MOOD DISPLAYED AND USER OPTIONS ----------------------------
-            Spr = thumby.Sprite(72, 40, introFrames) 
+            #SHOW PET MOOD BACKGROUND
+            Spr = thumby.Sprite(72, 40, introFrames)
+            #SHOW OPTIONS MENU ANIMATION
             while (data == False and pageNumber==1):
                 thumby.display.drawSprite(Spr)
                 Spr.setFrame(Spr.currentFrame+1)
+                #UP AND DOWN BUTTONS SET FOR DATA ON OR OFF
+                if thumby.buttonU.pressed():
+                    data=True
+                if thumby.buttonD.pressed():
+                    data=False
+                #CONTROL PAGE NUMBER FROM USER SELECT    
                 if time.ticks_ms()%4 ==0 and thumby.buttonA.pressed():
                     pageNumber = 2
                 elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
