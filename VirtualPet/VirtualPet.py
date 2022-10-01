@@ -296,50 +296,54 @@ while(True):
     #MINI GAME PAGE ----------------------------------------------
     elif pageNumber==2:
         Spr = thumby.Sprite(72, 40, gameFrames)
-        thumby.display.drawSprite(Spr)
-        Spr.setFrame(Spr.currentFrame+1)
-        thumby.display.update()
         place=0
         ones = 0
         tens = 0
         hundreds = 0
-        if place > 2:
-            place = 0
-        if thumby.buttonB.pressed():
-            pageNumber=1    
-        if thumby.buttonR.pressed():
-            place-=1
-        if thumby.buttonL.pressed():
-            place+=1
-        if thumby.buttonU.pressed():
-            if place ==0:
-                ones+=1
-            if place ==1:
-                tens+=1
-            if place ==2:
-                hundreds+=1    
-        if thumby.buttonD.pressed():
-            if place ==0:
-                ones-=1
-            if place ==1:
-                tens-=1
-            if place ==2:
-                hundreds-=1    
-            data=False    
-        thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
-        thumby.display.drawText(str(ones), 55,2, 1)
-        thumby.display.drawText(str(tens), 45,2, 1)
-        thumby.display.drawText(str(hundreds), 35,2, 1)
-        thumby.display.drawText(game1.text, 10,18, 1)
-        game1.userAnswer= ones+(tens*10)+(hundreds*100)
-        if thumby.buttonA.pressed():
-            if game1.userAnswer == game1.answer:
-                starpet.happy+=1
-                starpet.edu+=1
-            if game1.userAnswer != game1.answer:
-                starpet.angry+=1
-            pageNumber = 1    
-        thumby.display.update()
+        while (pageNumber == 2):
+            thumby.display.drawSprite(Spr)
+            Spr.setFrame(Spr.currentFrame+1)
+            thumby.display.drawText(game1.text, 3,20, 1)
+                
+            if place > 2:
+                place = 0
+            if place < 0:
+                place = 0
+                
+            if thumby.buttonB.pressed():
+                pageNumber=1    
+            if thumby.buttonR.pressed():
+                place-=1
+            if thumby.buttonL.pressed():
+                place+=1
+            if (thumby.buttonU.pressed() and ones<10 and tens<10 and hundreds< 10 ):
+                if place ==0:
+                    ones+=1
+                elif place ==1:
+                    tens+=1
+                elif place ==2:
+                    hundreds+=1    
+            if (thumby.buttonD.pressed() and ones>0 and tens>0 and hundreds>0):
+                if place ==0:
+                    ones-=1
+                elif place ==1:
+                    tens-=1
+                elif place ==2:
+                    hundreds-=1    
+                data=False    
+            thumby.display.setFont("/lib/font5x7.bin", 5, 7, 1)
+            thumby.display.drawText(str(ones), 55,2, 1)
+            thumby.display.drawText(str(tens), 45,2, 1)
+            thumby.display.drawText(str(hundreds), 35,2, 1)
+            game1.userAnswer= ones+(tens*10)+(hundreds*100)
+            if thumby.buttonA.pressed():
+                if game1.userAnswer == game1.answer:
+                    starpet.happy+=1
+                    starpet.edu+=1
+                if game1.userAnswer != game1.answer:
+                    starpet.angry+=1
+                pageNumber = 1    
+            thumby.display.update()
     
     #FOOD PAGE---------------------------------------------
     elif pageNumber==3:
