@@ -159,18 +159,19 @@ gc.collect()
 ################### BUILD STAR CHARACTER ##################################################
 ###########################################################################################
 class Star:
-    def __init__(self, food, toy, hyg, sad, sick, happy, angry, edu, level ):
+    def __init__(self, food, toy, hyg, sad, sick, happy, angry, game, edu, level ):
         self.food = food
         self.toy = toy
         self.hyg = hyg
         self.sad = sad
         self.sick = sick
         self.happy = happy  
-        self.angry = angry  
+        self.angry = angry
+        self.game    
         self.edu = edu
         self.level= level 
        
-starpet = Star(0,0,0,0,0,4,0,0,0)
+starpet = Star(0,0,0,0,0,4,0,0,0,0)
 
 
 ###########################################################################################
@@ -319,6 +320,12 @@ while(True):
     #The logic here is to control the input of the user and generate a Question and Answer
     elif pageNumber==2:
         #This logic Calls on the background
+        if starpet.game==1:
+            SprX = thumby.Sprite(45, 9, palinFrames)
+        elif starpet.game ==2:
+            SprX = thumby.Sprite(45, 9, binaryFrames)
+        elif starpet.game ==3:
+            SprX = thumby.Sprite(45, 9, hexFrames)
         Spr = thumby.Sprite(72, 40, gameFrames)
         place=0
         ones = 0
@@ -327,7 +334,23 @@ while(True):
         while (pageNumber == 2):
             thumby.display.drawSprite(Spr)
             Spr.setFrame(Spr.currentFrame+1)
-            thumby.display.drawText(game1.text, 3,20, 1)
+            if starpet.game == 0 :
+                thumby.display.drawText(game1.text, 3,20, 1)
+            elif starpet.game ==1 :
+                thumby.display.drawText(game2.text, 3,20, 1)
+                thumby.display.drawSprite(SprX)
+                SprX.setFrame(SprX.currentFrame+1)                
+            elif starpet.game ==2 :
+                thumby.display.drawText(game3.text, 3,20, 1) 
+                thumby.display.drawSprite(SprX)
+                SprX.setFrame(SprX.currentFrame+1)                
+            elif starpet.game ==3 :
+                thumby.display.drawText(game4.text, 3,20, 1)
+                thumby.display.drawSprite(SprX)
+                SprX.setFrame(SprX.currentFrame+1)
+            else:
+                thumby.display.drawText(game1.text, 3,20, 1)
+
     #This logic toggles between the input zones            
             if place > 2:
                 place = 0
@@ -335,7 +358,8 @@ while(True):
                 place = 0
     #This logic Exits the Page with no Effects 
             if thumby.buttonB.pressed():
-                pageNumber=1    
+                pageNumber=1
+                starpet.game+=1
     #This logic controls the user input from 0-9 for a three digit number
             if thumby.buttonR.pressed():
                 place-=1
@@ -363,9 +387,13 @@ while(True):
             thumby.display.drawText(str(hundreds), 35,2, 1)
             #This logic submits the user answer 
             game1.userAnswer= ones+(tens*10)+(hundreds*100)
+            game2.userAnswer= ones+(tens*10)+(hundreds*100)
+            game3.userAnswer= ones+(tens*10)+(hundreds*100)
+            game4.userAnswer= ones+(tens*10)+(hundreds*100)
             #This logic gives you positive or negative points
             #It also exits the mini game to return to main screen
             if thumby.buttonA.pressed():
+                
                 if game1.userAnswer == game1.answer:
                     starpet.happy+=1
                     starpet.edu+=1
@@ -373,7 +401,32 @@ while(True):
                     starpet.food =0
                     starpet.hyg =0
                     starpet.toy = 0
-                if game1.userAnswer != game1.answer:
+                    starpet.game+=1
+                elif game2.userAnswer == game2.answer:
+                    starpet.happy+=1
+                    starpet.edu+=1
+                    starpet.sad = 0
+                    starpet.food =0
+                    starpet.hyg =0
+                    starpet.toy = 0
+                    starpet.game+=1
+                elif game3.userAnswer == game3.answer:
+                    starpet.happy+=1
+                    starpet.edu+=1
+                    starpet.sad = 0
+                    starpet.food =0
+                    starpet.hyg =0
+                    starpet.toy = 0
+                    starpet.game+=1
+                elif game4.userAnswer == game4.answer:
+                    starpet.happy+=1
+                    starpet.edu+=1
+                    starpet.sad = 0
+                    starpet.food =0
+                    starpet.hyg =0
+                    starpet.toy = 0
+                    starpet.game+=1
+                else:
                     starpet.angry+=1
                 pageNumber = 1    
             thumby.display.update()
