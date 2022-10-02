@@ -1,6 +1,8 @@
 # Thumby-Virtual-Pet
 MicroPython Game for Thumby
 
+<img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/20220925_190153.jpg" width="200" height="300" />
+
 Play games , give toys, feed, and take proper care of hygiene. 
 
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%205.png">
