@@ -309,7 +309,7 @@ while(True):
         hundreds = 0
         while (pageNumber == 2):
             thumby.display.fill(0) 
-            thumby.display.drawText(str("Game:", 0,2, 1)
+            thumby.display.drawText("Game:", 0,2, 1)
             if game == 0 :
                 thumby.display.drawText(game1.name, 3,10, 1)
                 thumby.display.drawText(game1.text, 3,20, 1)
