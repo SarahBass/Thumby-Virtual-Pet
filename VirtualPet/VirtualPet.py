@@ -104,6 +104,13 @@ cowFrames = bytearray([255,207,183,55,183,247,247,227,237,227,199,199,131,153,13
 # 31x25 for 2 frames
 catFrames = bytearray([85,255,221,255,117,127,61,207,245,239,221,223,237,247,109,95,157,223,221,223,189,191,125,255,85,255,221,255,85,255,220,85,255,253,255,253,129,6,47,110,83,209,147,158,191,189,189,237,231,119,127,127,63,63,124,131,255,221,255,85,255,221,85,63,93,127,85,255,223,254,84,252,220,252,84,252,220,252,84,252,220,252,84,254,222,255,85,255,221,127,85,31,77,1,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,85,255,221,255,117,127,61,207,245,239,221,223,237,247,109,95,157,223,221,223,189,191,125,255,85,255,221,255,85,255,220,85,255,253,255,253,129,102,143,14,27,25,27,30,63,63,55,231,247,127,127,127,63,63,124,131,255,221,255,85,255,221,85,63,93,127,85,255,223,254,85,253,221,253,85,253,221,253,85,252,220,252,84,254,222,255,85,255,221,127,85,31,77,1,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0])
 # 72x69 for 1 frames
+# 45x9 for 1 frames
+binaryFrames = bytearray([255,0,255,41,239,0,252,7,0,255,12,16,255,0,255,17,255,0,255,57,207,0,31,208,127,0,85,0,255,41,239,0,255,17,0,255,17,255,0,1,255,1,0,31,241,1,0,1,1,1,0,1,0,0,1,0,0,1,0,1,0,1,0,1,0,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1,0,1,0,0,1,0,0,1,1])
+# 45x9 for 1 frames
+palinFrames = bytearray([255,0,255,13,15,0,255,253,255,0,255,255,0,0,1,255,1,0,255,255,255,0,255,253,254,0,255,253,246,0,255,253,255,0,255,254,255,0,255,11,3,0,85,85,1,1,0,1,0,0,0,1,0,1,0,1,1,1,0,1,1,1,0,1,0,1,0,1,1,0,0,1,0,1,0,1,1,1,0,1,0,1,0,1,1,1,0,1,1,1])
+# 45x9 for 1 frames
+hexFrames = bytearray([255,0,198,135,159,252,240,64,248,128,255,62,128,232,16,252,144,0,96,144,160,0,252,36,194,0,8,134,160,208,16,199,131,255,48,255,0,255,49,0,1,239,16,239,1,1,0,1,1,1,1,1,0,1,1,1,0,1,1,0,1,1,0,0,1,1,0,1,0,1,1,0,1,1,0,0,1,1,1,0,1,0,1,1,0,1,1,0,1,1])
+# 13x11 for 6 frames
 gc.collect()  
 gc.threshold(gc.mem_free() // 4 + gc.mem_alloc())
 thumby.display.setFPS(4) 
@@ -145,7 +152,7 @@ game2 = Game("Palindrome Pal", isPalindrome(isPalindrome,101), random.choice(pal
              isPalindrome(isPalindrome,(userInput*(random.choice(palindromenum))))) 
 game3 = Game("Binary Beats", randnumber,bin(randnumber)[2:], userInput)
 game4 = Game("Witch's Hex",randnumber,hex(randnumber)[2:],userInput)
-game5 = Game("Power Ball",pow(2,smallrandom),smallrandom,userInput)
+
 
 gc.collect()
 ###########################################################################################
@@ -440,17 +447,17 @@ while(True):
             #CONTROL PAGE NUMBER FROM USER SELECT    
             if time.ticks_ms()%3 ==0 and thumby.buttonA.pressed():
                 thumby.display.fill(0)
-                SprX = thumby.Sprite(20, 30, healFrames)
+                SprX = thumby.Sprite(20, 30, healFrames,30,0)
                 healstring = "Medicine[B]"
                 thumby.display.update()
             elif time.ticks_ms()%3 ==1 and thumby.buttonA.pressed():
                 thumby.display.fill(0)
-                SprX = thumby.Sprite(20, 30, bathFrames)
+                SprX = thumby.Sprite(20, 30, bathFrames,30,0)
                 healstring = "Give Bath[B]"
                 thumby.display.update()
             elif time.ticks_ms()%3 ==2 and thumby.buttonA.pressed():
                 thumby.display.fill(0)
-                SprX = thumby.Sprite(20, 30, brushFrames)
+                SprX = thumby.Sprite(20, 30, brushFrames,30,0)
                 healstring = "Brush Pet[B]"
                 thumby.display.update()
             if thumby.buttonB.pressed():
