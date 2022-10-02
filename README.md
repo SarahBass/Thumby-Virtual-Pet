@@ -9,7 +9,7 @@ Play games , give toys, feed, and take proper care of hygiene.
 
 A Game Created in MicroPython for a Thumby device that simulates a virtual pet. The virtual pet is a star that lives in a galaxy far, far away! Raise the pet starting from a baby blackhole. The star evolves into a nebula cloud, then finally a star.
 
-Game appears on a tiny 72*40 pixel screen and all art is loaded from simple binary files to show a black and white bitmap.
+Game appears on a tiny 72*40 pixel screen and all art is loaded from simple binary files to show a black and white bitmap. This tiny Thumby measures only 1.2" by 0.7" by 0.3".
 
 
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%202%202%202%205.png">
