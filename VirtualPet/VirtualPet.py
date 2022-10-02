@@ -403,29 +403,29 @@ while(True):
             thumby.display.update()
     #CARE FOR PET PAGE ------------------------------------------------
     elif pageNumber==5:
+        healstring = "Sick:"+ str(starpet.sick) + " SEL[A]" 
         SprX = thumby.Sprite(72, 8, hygFrames) 
         while (pageNumber == 5):
-            thumby.display.drawSprite(Spr)
-            Spr.setFrame(Spr.currentFrame+1)
+            thumby.display.fill(0)
             thumby.display.drawSprite(SprX)
             SprX.setFrame(SprX.currentFrame+1)
-            thumby.display.drawText("Sick: "+ str(starpet.sick), 0,30, 1)
+            thumby.display.drawText(healstring, 0,30, 1)
             thumby.display.update()
             #CONTROL PAGE NUMBER FROM USER SELECT    
             if time.ticks_ms()%4 ==0 and thumby.buttonA.pressed():
                 thumby.display.fill(0)
-                Spr = thumby.Sprite(20, 30, healFrames)
-                thumby.display.drawText("Brush[B]", 0,30, 1)
+                SprX = thumby.Sprite(20, 30, healFrames)
+                healstring = "Medicine[B]"
                 thumby.display.update()
             elif time.ticks_ms()%4 ==1 and thumby.buttonA.pressed():
                 thumby.display.fill(0)
-                Spr = thumby.Sprite(20, 30, healFrames)
-                thumby.display.drawText("Bath[B]", 0,30, 1)
+                SprX = thumby.Sprite(20, 30, healFrames)
+                healstring = "Give Bath[B]"
                 thumby.display.update()
             elif time.ticks_ms()%4 ==2 and thumby.buttonA.pressed():
                 thumby.display.fill(0)
-                Spr = thumby.Sprite(20, 30, healFrames) 
-                thumby.display.drawText("Medicine[B]", 0,30, 1)
+                SprX = thumby.Sprite(20, 30, healFrames)
+                healstring = "Brush Pet[B]"
                 thumby.display.update()
             if thumby.buttonB.pressed():
                 pageNumber=1
