@@ -301,19 +301,21 @@ while(True):
     #The logic here is to control the input of the user and generate a Question and Answer
     
     elif pageNumber==2:
-        randnum=random.randint(2, 1299)           
-        randnumber=random.randint(5, 120)              
-        palindromenum=[5,6,7,9,11,12,14,15,       
-               17,18,19,21,28,35,36,      
-               37,42,63,73,74,84,85,      
-               94,101,111,119,126,131,    
-               185,202,303,404,409]       
+        if game > 3:
+            game = 0
         thumby.display.fill(0)
         place=0
         ones = 0
         tens = 0
         hundreds = 0
         while (pageNumber == 2):
+            randnum=random.randint(2, 1299)          
+            randnumber=random.randint(5, 120)           
+            palindromenum=[5,6,7,9,11,12,14,15,      
+                 17,18,19,21,28,35,36,                
+                37,42,63,73,74,84,85,                
+                94,101,111,119,126,131,                  
+                185,202,303,404,409]                     
             thumby.display.fill(0) 
             thumby.display.drawText("GAME:", 0,2, 1)
             thumby.display.drawText("<LR> +UD- AB", 0,30, 1)
