@@ -316,7 +316,7 @@ while(True):
                 thumby.display.drawText(game1.text, 3,20, 1)
             elif game ==1 :
                 thumby.display.drawText(game2.name, 3,10, 1)
-                thumby.display.drawText(game2.text, 3,20, 1)
+                thumby.display.drawText(str(game2.text), 3,20, 1)
             elif game ==2 :
                 thumby.display.drawText(game2.name, 3,10, 1)
                 thumby.display.drawText(game3.text, 3,20, 1) 
