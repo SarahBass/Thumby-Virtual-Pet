@@ -30,7 +30,13 @@ import gc
 
 #Global Variables-------------------------#                             
 userInput=11                              #
-                                          #
+randnum=random.randint(2, 1299)           #
+randnumber=random.randint(5, 120)         #    
+palindromenum=[5,6,7,9,11,12,14,15,       #
+    17,18,19,21,28,35,36,                 #
+    37,42,63,73,74,84,85,                 #
+    94,101,111,119,126,131,               #    
+    185,202,303,404,409]                  #                           
                                           #
 data= False                               #
 abutton = 0                               #
