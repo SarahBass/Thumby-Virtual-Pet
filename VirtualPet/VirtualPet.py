@@ -264,11 +264,14 @@ while(True):
             
             #SHOW PET MOOD BACKGROUND
             if starpet.sick > 0:
-                Spr = thumby.Sprite(20, 30, sickFrames,0,8)
+                thumby.display.fill(0) 
+                Spr = thumby.Sprite(20, 30, sickFrames,30,8)
             elif starpet.angry >0:
-                Spr = thumby.Sprite(20, 30, angryFrames,0,8)
+                thumby.display.fill(0) 
+                Spr = thumby.Sprite(20, 30, angryFrames,30,8)
             elif starpet.sad > 0:
-                Spr = thumby.Sprite(20, 30, sadFrames,0,8)
+                thumby.display.fill(0) 
+                Spr = thumby.Sprite(20, 30, sadFrames,30,8)
             else :
                 if starpet.level > 5:
                     if starpet.happy > 5:
