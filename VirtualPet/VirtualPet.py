@@ -263,30 +263,23 @@ while(True):
             #Every Action Resets Values of other Actions
             
             #SHOW PET MOOD BACKGROUND
-            if starpet.level > 5:
-                if starpet.sick > 0:
-                    Spr = thumby.Sprite(72, 40, introFrames)
-                elif starpet.angry >0:
-                    Spr = thumby.Sprite(72, 40, introFrames)
-                elif starpet.sad > 0:
-                    Spr = thumby.Sprite(72, 40, introFrames)
-                else :
-                    if starpet.happy > 5:
-                        Spr = thumby.Sprite(72, 40, introFrames)
-                    else:
-                        Spr = thumby.Sprite(72, 40, introFrames)
+            if starpet.sick > 0:
+                Spr = thumby.Sprite(72, 40, sickFrames)
+            elif starpet.angry >0:
+                Spr = thumby.Sprite(72, 40, angryFrames)
+            elif starpet.sad > 0:
+                Spr = thumby.Sprite(72, 40, sadFrames)
             else :
-                if starpet.sick > 0:
-                    Spr = thumby.Sprite(72, 40, introFrames)
-                elif starpet.angry >0:
-                    Spr = thumby.Sprite(72, 40, introFrames)
-                elif starpet.sad > 0:
-                    Spr = thumby.Sprite(72, 40, introFrames)
+                if starpet.level > 5:
+                    if starpet.happy > 5:
+                        Spr = thumby.Sprite(72, 40, happystatFrames)
+                    else:
+                        Spr = thumby.Sprite(72, 40, sadstarFrames)
                 else :
                     if starpet.happy > 5:
                         Spr = thumby.Sprite(72, 40, introFrames)
                     else:
-                        Spr = thumby.Sprite(72, 40, introFrames)
+                        Spr = thumby.Sprite(72, 40, sadgasFrames)
             
             #SHOW OPTIONS MENU ANIMATION
             SprX = thumby.Sprite(72, 9, topchoiceFrames)
@@ -414,11 +407,11 @@ while(True):
                 toystring = "Toy Dog[B]"
                 thumby.display.update()
             elif time.ticks_ms()%3 ==1 and thumby.buttonA.pressed():
-                SprX = thumby.Sprite(31, 25, dogFrames)
+                SprX = thumby.Sprite(31, 25, catFrames)
                 toystring = "Toy Cat[B]"
                 thumby.display.update()
             elif time.ticks_ms()%3 ==2 and thumby.buttonA.pressed():
-                SprX = thumby.Sprite(31, 25, dogFrames)
+                SprX = thumby.Sprite(31, 25, cowFrames)
                 toystring = "Toy Cow[B]"
                 thumby.display.update()
             if thumby.buttonB.pressed():
@@ -449,12 +442,12 @@ while(True):
                 thumby.display.update()
             elif time.ticks_ms()%3 ==1 and thumby.buttonA.pressed():
                 thumby.display.fill(0)
-                SprX = thumby.Sprite(20, 30, healFrames)
+                SprX = thumby.Sprite(20, 30, bathFrames)
                 healstring = "Give Bath[B]"
                 thumby.display.update()
             elif time.ticks_ms()%3 ==2 and thumby.buttonA.pressed():
                 thumby.display.fill(0)
-                SprX = thumby.Sprite(20, 30, healFrames)
+                SprX = thumby.Sprite(20, 30, brushFrames)
                 healstring = "Brush Pet[B]"
                 thumby.display.update()
             if thumby.buttonB.pressed():
