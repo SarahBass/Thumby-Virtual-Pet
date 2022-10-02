@@ -313,19 +313,19 @@ while(True):
             thumby.display.drawText("<LR> +UD- AB", 0,30, 1)
             if game == 0 :
                 thumby.display.drawText(game1.name, 3,10, 1)
-                thumby.display.drawText(game1.text, 3,20, 1)
+                thumby.display.drawText(game1.text + "= ?", 3,20, 1)
             elif game ==1 :
                 thumby.display.drawText(game2.name, 3,10, 1)
-                thumby.display.drawText(str(game2.text), 3,20, 1)
+                thumby.display.drawText("? * "+str(game2.text)+"= []", 3,20, 1)
             elif game ==2 :
-                thumby.display.drawText(game2.name, 3,10, 1)
-                thumby.display.drawText(game3.text, 3,20, 1) 
+                thumby.display.drawText(game3.name, 3,10, 1)
+                thumby.display.drawText(game3.text + "= ?", 3,20, 1) 
             elif game ==3 :
-                thumby.display.drawText(game2.name, 3,10, 1)
-                thumby.display.drawText(game4.text, 3,20, 1)
+                thumby.display.drawText(game4.name, 3,10, 1)
+                thumby.display.drawText(game4.text + "= ?", 3,20, 1)
             else:
                 thumby.display.drawText(game2.name, 3,10, 1)
-                thumby.display.drawText(game1.text, 3,20, 1)
+                thumby.display.drawText(game1.text+ "= ?", 3,20, 1)
 
     #This logic toggles between the input zones            
             if place > 2:
@@ -378,6 +378,7 @@ while(True):
                     starpet.hyg =0
                     starpet.toy = 0
                     game+=1
+                    pageNumber = 1 
                 elif game2.userAnswer == game2.answer:
                     starpet.happy+=1
                     starpet.edu+=1
@@ -386,6 +387,7 @@ while(True):
                     starpet.hyg =0
                     starpet.toy = 0
                     game+=1
+                    pageNumber = 1 
                 elif game3.userAnswer == game3.answer:
                     starpet.happy+=1
                     starpet.edu+=1
@@ -394,6 +396,7 @@ while(True):
                     starpet.hyg =0
                     starpet.toy = 0
                     game+=1
+                    pageNumber = 1 
                 elif game4.userAnswer == game4.answer:
                     starpet.happy+=1
                     starpet.edu+=1
@@ -402,9 +405,10 @@ while(True):
                     starpet.hyg =0
                     starpet.toy = 0
                     game+=1
+                    pageNumber = 1 
                 else:
                     starpet.angry+=1
-                pageNumber = 1    
+                    pageNumber = 1    
             thumby.display.update()
     
     #FOOD PAGE---------------------------------------------
