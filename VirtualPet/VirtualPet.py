@@ -130,10 +130,10 @@ class Game:
         self.answer = answer
         self.text = text
         self.userAnswer= userAnswer
-game1 = Game("Roman Numeral", randnum, intToRoman(randnum),userInput)    
-game2 = Game("Palindrome Pal", isPalindrome(isPalindrome,101), random.choice(palindromenum),
+game1 = Game("Roman Quest", randnum, intToRoman(randnum),userInput)    
+game2 = Game("PAlindroME!", isPalindrome(isPalindrome,101), random.choice(palindromenum),
              isPalindrome(isPalindrome,(userInput*(random.choice(palindromenum))))) 
-game3 = Game("Binary Beats", randnumber,bin(randnumber)[2:], userInput)
+game3 = Game("BinaryBeats", randnumber,bin(randnumber)[2:], userInput)
 game4 = Game("Witch's Hex",randnumber,hex(randnumber)[2:],userInput)
 
 
@@ -309,7 +309,8 @@ while(True):
         hundreds = 0
         while (pageNumber == 2):
             thumby.display.fill(0) 
-            thumby.display.drawText("Game:", 0,2, 1)
+            thumby.display.drawText("GAME:", 0,2, 1)
+            thumby.display.drawText("<LR> +UD- AB", 0,30, 1)
             if game == 0 :
                 thumby.display.drawText(game1.name, 3,10, 1)
                 thumby.display.drawText(game1.text, 3,20, 1)
@@ -334,7 +335,7 @@ while(True):
     #This logic Exits the Page with no Effects 
             if thumby.buttonB.pressed():
                 pageNumber=1
-                starpet.game+=1
+                game+=1
     #This logic controls the user input from 0-9 for a three digit number
             if thumby.buttonR.pressed():
                 place-=1
