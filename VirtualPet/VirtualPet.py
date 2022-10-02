@@ -300,6 +300,7 @@ while(True):
                 thumby.display.update()
     #MINI GAME PAGE ----------------------------------------------------------------------
     #The logic here is to control the input of the user and generate a Question and Answer
+    
     elif pageNumber==2:
         thumby.display.fill(0)
         place=0
@@ -307,15 +308,22 @@ while(True):
         tens = 0
         hundreds = 0
         while (pageNumber == 2):
+            thumby.display.fill(0) 
+            thumby.display.drawText(str("Game:", 0,2, 1)
             if game == 0 :
+                thumby.display.drawText(game1.name, 3,10, 1)
                 thumby.display.drawText(game1.text, 3,20, 1)
             elif game ==1 :
+                thumby.display.drawText(game2.name, 3,10, 1)
                 thumby.display.drawText(game2.text, 3,20, 1)
             elif game ==2 :
+                thumby.display.drawText(game2.name, 3,10, 1)
                 thumby.display.drawText(game3.text, 3,20, 1) 
             elif game ==3 :
+                thumby.display.drawText(game2.name, 3,10, 1)
                 thumby.display.drawText(game4.text, 3,20, 1)
             else:
+                thumby.display.drawText(game2.name, 3,10, 1)
                 thumby.display.drawText(game1.text, 3,20, 1)
 
     #This logic toggles between the input zones            
