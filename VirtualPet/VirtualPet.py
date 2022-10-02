@@ -30,14 +30,24 @@ import gc
 
 #Global Variables-------------------------#                             
 userInput=11                              #
-randnum=random.randint(2, 1299)           #
-randnumber=random.randint(5, 120)         #    
+randnum=[5, 6, 10, 60, 25, 100, 120, 333, #
+    444, 605, 999 ,                       #
+    17,18,19,21,28,35,36,                 #
+    37,42,63,73,74,84,85,                 #
+    94,101,111,119,126,131,               #    
+    185,202,303,404,409]                  #    
+randnumber=[5, 7, 10, 8, 32, 38, 44, 64,  #
+    77, 86, 100, 111, 120,                #
+    17,18,19,21,28,35,36,                 #
+    37,42,63,73,74,84,85,                 #
+    94,101,111,119,126,131,               #    
+    185,102,103,104,109]                  #    
 palindromenum=[5,6,7,9,11,12,14,15,       #
     17,18,19,21,28,35,36,                 #
     37,42,63,73,74,84,85,                 #
     94,101,111,119,126,131,               #    
     185,202,303,404,409]                  #                           
-                                          #
+i=0                                       #
 data= False                               #
 abutton = 0                               #
 pageNumber=0                              #
@@ -129,11 +139,11 @@ class Game:
         self.answer = answer
         self.text = text
         self.userAnswer= userAnswer
-game1 = Game("Roman Quest", randnum, intToRoman(randnum),userInput)    
-game2 = Game("PAlindroME!", isPalindrome(isPalindrome,101), random.choice(palindromenum),
-             isPalindrome(isPalindrome,(userInput*(random.choice(palindromenum))))) 
-game3 = Game("BinaryBeats", randnumber,bin(randnumber)[2:], userInput)
-game4 = Game("Witch's Hex",randnumber,hex(randnumber)[2:],userInput)
+game1 = Game("Roman Quest", randnum[i], intToRoman(randnum[i]),userInput)    
+game2 = Game("PAlindroME!", isPalindrome(isPalindrome,101), (palindromenum[i]),
+             isPalindrome(isPalindrome,(userInput*(palindromenum[i])))) 
+game3 = Game("BinaryBeats", randnumber[i],bin(randnumber[i])[2:], userInput)
+game4 = Game("Witch's Hex",randnumber[i],hex(randnumber[i])[2:],userInput)
 
 
 gc.collect()
@@ -309,13 +319,6 @@ while(True):
         tens = 0
         hundreds = 0
         while (pageNumber == 2):
-            randnum=random.randint(2, 1299)          
-            randnumber=random.randint(5, 120)           
-            palindromenum=[5,6,7,9,11,12,14,15,      
-                 17,18,19,21,28,35,36,                
-                37,42,63,73,74,84,85,                
-                94,101,111,119,126,131,                  
-                185,202,303,404,409]                     
             thumby.display.fill(0) 
             thumby.display.drawText("GAME:", 0,2, 1)
             thumby.display.drawText("<LR> +UD- AB", 0,30, 1)
@@ -344,6 +347,7 @@ while(True):
             if thumby.buttonB.pressed():
                 pageNumber=1
                 game+=1
+                i +=1 
     #This logic controls the user input from 0-9 for a three digit number
             if thumby.buttonR.pressed():
                 place-=1
@@ -387,6 +391,7 @@ while(True):
                     starpet.hyg =0
                     starpet.toy = 0
                     game+=1
+                    i +=1 
                     pageNumber = 1 
                 elif game2.userAnswer == game2.answer:
                     starpet.happy+=1
@@ -397,6 +402,7 @@ while(True):
                     starpet.hyg =0
                     starpet.toy = 0
                     game+=1
+                    i +=1 
                     pageNumber = 1 
                 elif game3.userAnswer == game3.answer:
                     starpet.happy+=1
@@ -407,6 +413,7 @@ while(True):
                     starpet.hyg =0
                     starpet.toy = 0
                     game+=1
+                    i +=1 
                     pageNumber = 1 
                 elif game4.userAnswer == game4.answer:
                     starpet.happy+=1
@@ -417,11 +424,13 @@ while(True):
                     starpet.hyg =0
                     starpet.toy = 0
                     game+=1
+                    i +=1 
                     pageNumber = 1 
                 else:
                     starpet.angry+=1
                     pageNumber = 1
                     game+=1
+                    i +=1 
             thumby.display.update()
     
     #FOOD PAGE---------------------------------------------
