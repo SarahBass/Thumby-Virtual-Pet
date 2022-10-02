@@ -26,8 +26,6 @@ Game appears on a tiny 72*40 pixel screen and all art is loaded from simple bina
 
 ## Mini games are all inspired by LEETCODE Challenges
 
-Game 1: Leetcode Roman Numeral Game -> Integer Challenge #0013
-
 <img src="https://github.com/SarahBass/Thumby-Virtual-Pet/blob/main/Animated%20gifs/Untitled%206.png">
 
 Game 1: Leetcode Roman Numeral Game -> Integer Challenge #0013
