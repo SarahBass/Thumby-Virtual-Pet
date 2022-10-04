@@ -25,7 +25,7 @@ import math
 import random
 import machine
 import gc
-
+from random import randrange
 ##############################################
 
 #Global Variables-------------------------#                             
@@ -328,12 +328,12 @@ while(True):
     #The logic here is to control the input of the user and generate a Question and Answer
     
     elif pageNumber==2:
-        game1.answer = random.choice(randy1)
+        game1.answer = randy1[num]
         game1.text = intToRoman(game1.answer)
-        game2.text =  random.choice(randy3)
-        game3.answer = random.choice(randy2)
+        game2.text =  randy3[num]
+        game3.answer = randy2[num]
         game3.text = bin(game3.answer)[2:]
-        game4.answer = random.choice(randy2)
+        game4.answer = randy2[num]
         game4.text = hex(game4.answer)[2:]
         if game > 3:
             game = 0
@@ -415,7 +415,7 @@ while(True):
                     starpet.hyg =0
                     starpet.toy = 0
                     game+=1
-                    num +=2 
+                    num +=random.randrange(3) 
                     pageNumber = 1
                 elif game2.userAnswer == game2.answer:
                     starpet.happy+=1
@@ -448,13 +448,13 @@ while(True):
                     starpet.hyg =0
                     starpet.toy = 0
                     game+=1
-                    num +=1 
+                    num +=random.randrange(3) 
                     pageNumber = 1 
                 else:
                     starpet.angry+=1
                     pageNumber = 1
                     game+=1
-                    num += 2 
+                    num +=random.randrange(3) 
             thumby.display.update()
     
     #FOOD PAGE---------------------------------------------
