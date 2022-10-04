@@ -112,9 +112,6 @@ cowFrames = bytearray([255,207,183,55,183,247,247,227,237,227,199,199,131,153,13
 # 31x25 for 2 frames
 catFrames = bytearray([85,255,221,255,117,127,61,207,245,239,221,223,237,247,109,95,157,223,221,223,189,191,125,255,85,255,221,255,85,255,220,85,255,253,255,253,129,6,47,110,83,209,147,158,191,189,189,237,231,119,127,127,63,63,124,131,255,221,255,85,255,221,85,63,93,127,85,255,223,254,84,252,220,252,84,252,220,252,84,252,220,252,84,254,222,255,85,255,221,127,85,31,77,1,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,85,255,221,255,117,127,61,207,245,239,221,223,237,247,109,95,157,223,221,223,189,191,125,255,85,255,221,255,85,255,220,85,255,253,255,253,129,102,143,14,27,25,27,30,63,63,55,231,247,127,127,127,63,63,124,131,255,221,255,85,255,221,85,63,93,127,85,255,223,254,85,253,221,253,85,253,221,253,85,252,220,252,84,254,222,255,85,255,221,127,85,31,77,1,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0])
 # 45x9 for 1 frames
-# 26x27 for 1 frames
-smartFrames = bytearray([0,56,124,198,130,0,0,0,136,72,120,88,72,120,104,120,136,104,0,84,56,108,56,84,0,0,0,90,128,2,2,4,18,17,4,8,8,36,64,36,8,8,4,17,22,0,8,4,2,130,84,0,0,0,160,17,10,4,0,0,16,0,32,192,0,0,192,0,0,0,0,0,4,10,209,0,0,0,0,0,2,4,0,4,0,2,0,2,1,0,0,0,0,1,0,2,2,0,4,0,5,0,0,0])
-
 gc.collect()  
 gc.threshold(gc.mem_free() // 4 + gc.mem_alloc())
 thumby.display.setFPS(4) 
@@ -408,12 +405,8 @@ while(True):
             #This logic gives you positive or negative points
             #It also exits the mini game to return to main screen
             if thumby.buttonA.pressed():
-                thumby.display.fill(0) 
-                Spr = thumby.Sprite(26, 27, smartFrames,30,20)
-                thumby.display.drawSprite(Spr)
-                Spr.setFrame(Spr.currentFrame+1)
+                
                 if game1.userAnswer == game1.answer:
-                    thumby.display.drawText(str("game1.answer"),20,5, 1)
                     starpet.happy+=1
                     starpet.edu+=1
                     starpet.sad = 0
@@ -425,7 +418,6 @@ while(True):
                     num +=random.randrange(3) 
                     pageNumber = 1
                 elif game2.userAnswer == game2.answer:
-                    thumby.display.drawText(str("Correct!"),20,5, 1)
                     starpet.happy+=1
                     starpet.edu+=1
                     starpet.sad = 0
@@ -434,10 +426,9 @@ while(True):
                     starpet.hyg =0
                     starpet.toy = 0
                     game+=1
-                    num +=random.randrange(3) 
+                    num +=1
                     pageNumber = 1 
                 elif game3.userAnswer == game3.answer:
-                    thumby.display.drawText(str("game3.answer"),20,5, 1)
                     starpet.happy+=1
                     starpet.edu+=1
                     starpet.sad = 0
@@ -446,10 +437,9 @@ while(True):
                     starpet.hyg =0
                     starpet.toy = 0
                     game+=1
-                    num +=random.randrange(3) 
+                    num +=1 
                     pageNumber = 1 
                 elif game4.userAnswer == game4.answer:
-                    thumby.display.drawText(str("game4.answer"),20,5, 1)
                     starpet.happy+=1
                     starpet.edu+=1
                     starpet.sad = 0
@@ -461,11 +451,10 @@ while(True):
                     num +=random.randrange(3) 
                     pageNumber = 1 
                 else:
-                    thumby.display.drawText(str("Wrong!"),20,5, 1)
                     starpet.angry+=1
                     pageNumber = 1
                     game+=1
-                    num +=1 
+                    num +=random.randrange(3) 
             thumby.display.update()
     
     #FOOD PAGE---------------------------------------------
@@ -565,4 +554,3 @@ while(True):
         thumby.display.fill(0) 
         thumby.display.update()
     #END OF WHILE LOOP ----------------------------------------------
-    
