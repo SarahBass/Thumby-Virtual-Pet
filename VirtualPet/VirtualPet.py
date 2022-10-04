@@ -149,7 +149,7 @@ class Game:
         self.text = text
         self.userAnswer= userAnswer
 game1 = Game("Roman Quest", randnum, intToRoman(randnum),userInput)    
-game2 = Game("PAlindroME!", isPalindrome(isPalindrome,101), palindromenum, isPalindrome(isPalindrome,(userInput*(palindromenum)))) 
+game2 = Game("PAlindroME!", True, palindromenum, isPalindrome(isPalindrome,(userInput))) 
 game3 = Game("BinaryBeats", randnumber,bin(randnumber)[2:], userInput)
 game4 = Game("Witch's Hex",randnumber,hex(randnumber)[2:],userInput)
 
@@ -328,6 +328,13 @@ while(True):
     #The logic here is to control the input of the user and generate a Question and Answer
     
     elif pageNumber==2:
+        game1.answer = random.choice(randy1)
+        game1.text = intToRoman(game1.answer)
+        game2.text =  random.choice(randy3)
+        game3.answer = random.choice(randy2)
+        game3.text = bin(game3.answer)[2:]
+        game4.answer = random.choice(randy2)
+        game4.text = hex(game4.answer)[2:]
         if game > 3:
             game = 0
         thumby.display.fill(0)
@@ -336,13 +343,6 @@ while(True):
         tens = 0
         hundreds = 0
         while (pageNumber == 2):
-            game1.answer = random.choice(randy1)
-            game1.text = intToRoman(game1.answer)
-            game2.text =  random.choice(randy3)
-            game3.answer = random.choice(randy2)
-            game3.text = bin(game3.answer)[2:]
-            game4.answer = random.choice(randy2)
-            game4.text = hex(game4.answer)[2:]
             thumby.display.fill(0) 
             thumby.display.drawText("GAME:", 0,2, 1)
             thumby.display.drawText("<LR> +UD- AB", 0,30, 1)
@@ -399,7 +399,7 @@ while(True):
             thumby.display.drawText(str(hundreds), 35,2, 1)
             #This logic submits the user answer 
             game1.userAnswer= ones+(tens*10)+(hundreds*100)
-            game2.userAnswer= ones+(tens*10)+(hundreds*100)
+            game2.userAnswer= isPalindrome(isPalindrome,((ones+(tens*10)+(hundreds*100)) * game2.text))
             game3.userAnswer= ones+(tens*10)+(hundreds*100)
             game4.userAnswer= ones+(tens*10)+(hundreds*100)
             #This logic gives you positive or negative points
